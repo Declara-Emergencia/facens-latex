@@ -1,11 +1,31 @@
 \chapter{Considerações finais}
 
-%% TODO: Finalizar
+Apesar da inconsist{\^e}ncia da transi{\c
+c}{\~a} de treino para teste indicar a falta de
+generaliza{\c c}{\~a} do NEAT, e assim a falta
+de aptid{\~a}o para uma aplica{\c c}{\~a} em um
+ve{\'i}culo f{\'i}sico, a facilidade e rapidez
+de treinamento (pelas possibilidades de
+paraleliza{\c c}{\~a}o dadas pelo algoritmo)
+faz{\'e} plaus{\'i}vel o treinamento em cada
+ambiente espec{\'i}ficos. Por{\'e}m, neste caso
+seria dif{\'i}cil justificar o aumento de
+complexidade em compara{\c c}{\~a}o a, por
+exemplo, um AGV ou at{\'e} mesmo um simples
+sistema especialista (como um rob{\^o} guiado
+por uma fita no ch{\~a}o.
 
-\textbf{***Paralelizacao e desempenho vs deep q learning; predominancia de carros andando em circulo***}
+Al{\'e}m disso, pelo metodo de recompensa utilizado, um problema recorrente foi a t{\'e}cnica dos carros de ignorar o caminho e andar em c{\'i}rculos - assim aumentando a dist{\^a}ncia percorrida e evitando o perigo de colis{\~a}o. Isso foi remediado pela presen{\c c}a das recompensas extras dispostas no caminho, por{\'e}m continuou sendo algo poss{\'i}vel no processo de aprendizado. Um diferente m{\'e}todo de recompensa ou regras mais restritas sobre o funcionamento dos carros poderia amenizar esses problemas, mas aumentaria ainda mais a complexidade por algo que n{\~a} {\'e} preciso ser lidado em outras op{\c c}{\~o}es de algoritmos.
 
-AGVs e carros que seguem fita
+Outra oportunidade de melhoria seriam mais entradas de dados na rede para aux{\'i}lio na tomada de decis{\~a}o. Eventualmente, os carros encontraram um modo de "\textit{desacelerar}" mesmo com a acelera{\c c}{\~a}o constante da simula{\c c}{\~a}o: virando para os dois lados rapidamente, reduzindo a velocidade para frente. Enquanto esse m{\'e}todo funciona, adicionar o par{\^a}metro de velocidade como uma entrada na rede poderia auxiliar na decis{\~a}o de virar ou seguir em frente. No entando, remover a acelera{\c c}{\~a}o constante pode diminuir o incentivo de manter o movimento, entrando no ponto anterior de priorizar sobreviv{\^e}ncia a recompansas.
 
-falta de generalizacao faz dificil justificar o uso
-
-\lipsum[31-33]
+Tendo isso, com o processo de treinamento de boa
+performance de aprendizado comparado com outros
+m{\'e}todos semelhantes e custos computacionais
+modestos, junto com uma implementa{\c c}{\~a}o
+relativamente simples (juntando conceitos
+simples e provados na {\'a}rea, Redes Neurais e
+Algor{\'i}tmo Gen{\'e}tico), o NEAT pode ser uma
+alternativa que vale a pena a ser explorada em
+problemas em que generalidade {\'e} desejada
+por{\'e} n{\~a} estritamente necess{\'a}ria.
