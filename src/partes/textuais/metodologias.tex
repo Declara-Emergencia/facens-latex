@@ -158,7 +158,7 @@ pode ser representada pela \autoref{fig_CC}.
 \begin{figure}[htb]
         \centering
         \caption{\label{fig_CC}Organização inicial da rede neural partindo de uma estrutura mínima.}
-        \includegraphics[width=0.7\textwidth]{images/CC.png}
+        \includegraphics[width=0.3\textwidth]{images/CC.png}
         \legend{
                 Fonte: Autoria Pr{\'o}pria.
         }
@@ -310,7 +310,7 @@ pelo peso de cada uma de suas três arestas, observável na \autoref{tab_HZ}.
     \caption{\label{tab_HZ}Produto entre a leitura dos sensores e o peso de cada uma de suas arestas.}
     \begin{tabular}{ccccc}
         \hline
-		\textbf{Sensores} & \textbf{Entrada * \textit{w$_{\text{1i}}$}} & \textbf{Entrada * \textit{w$_{\text{2i}}$}} & \textbf{Entrada * \textit{w$_{\text{3i}}$}} \\ \hline
+		\textbf{Sensores} & \textbf{Entrada * w$_{\textit{1i}}$} & \textbf{Entrada * w$_{\textit{2i}}$} & \textbf{Entrada * w$_{\textit{3i}}$} \\ \hline
 		-5 & 6,840  & 88,800   & 198,720    \\ \hline
 		-4 & 517,600  & -266,000   & -562,000    \\ \hline
 		-3 & -58,900  & 3,150   & 77,950   \\ \hline
@@ -324,7 +324,7 @@ pelo peso de cada uma de suas três arestas, observável na \autoref{tab_HZ}.
 O produto resultante vem a ser utilizado para a função agregada aplicada aos nós — definida como somatório de início da execução,
 podendo vir a sofrer mutação, desconsiderada para fins de demonstração padronizada. 
 
-O valor é obtido somando-se todas as entradas pesadas com as arestas para cada saída, podendo ser observado na \autoref{images/tab_HY}.
+O valor é obtido somando-se todas as entradas pesadas com as arestas para cada saída, podendo ser observado na \autoref{tab_HY}.
 
 \begin{table}[htb]
 	\centering
@@ -422,7 +422,7 @@ de direção em caso de ativação do nó de número \textit{2}.
 
 A função completa com todas as etapas anteriores pode ser expressa pela seguinte fórmula:
 
-\[ output = \max_{n}\{n | tanh(bias + response * \sum_{k=0}^{\i} weight_{ni}*input)\} \]
+\[ output = \max_{n}\{n | tanh(bias + response * \sum_{k=0}^{i} weight_{ni}*input)\} \]
 
 Retornando à situação proposta na \autoref{fig_GB} e minuciosamente examinada no subcapítulo 5.3.2.2,
 se faz possível notar uma tendência a virar à esquerda de acordo com o ambiente sensorizado —
