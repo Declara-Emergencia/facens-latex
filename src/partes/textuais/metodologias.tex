@@ -102,7 +102,7 @@ utilizados pelo algoritmo para controlar seu processo evolucionário. Estes dado
 ajustados em meio a execuções a fim de se obter resultados mais próximos do ideal.
 
 A sensibilidade do algoritmo genético o permite ser implementado de diferentes formas,
-tal qual apontado por \citeonline(pacheco1999genetic), a escolha de técnicas, parâmetros e tipos de operadores
+tal qual apontado por \citeonline{pacheco1999genetic}, a escolha de técnicas, parâmetros e tipos de operadores
 é empírica, porém em sintonia com o problema, expondo a necessidade de empregar a melhor abordagem
 ao problema em questão não sendo ela uma verdade universalmente aplicável.
 
@@ -310,7 +310,7 @@ pelo peso de cada uma de suas três arestas, observável na \autoref{tab_HZ}.
     \caption{\label{tab_HZ}Produto entre a leitura dos sensores e o peso de cada uma de suas arestas.}
     \begin{tabular}{ccccc}
         \hline
-		\textbf{Sensores} & \textbf{Entrada * w$_{\textit{1i}}$} & \textbf{Entrada * w$_{\textit{2i}}$} & \textbf{Entrada * w$_{\textit{3i}}$} \\ \hline
+		\textbf{Sensores} & \textbf{Entrada * w$_{1i}$} & \textbf{Entrada * w$_{2i}$} & \textbf{Entrada * w$_{3i}$} \\ \hline
 		-5 & 6,840  & 88,800   & 198,720    \\ \hline
 		-4 & 517,600  & -266,000   & -562,000    \\ \hline
 		-3 & -58,900  & 3,150   & 77,950   \\ \hline
@@ -621,12 +621,12 @@ são considerados da mesma espécie e quando acima, espécies distintas.
 \[ \delta = \frac{c_1 * D}{N} + c_2 * \overline{W}\]
 
 A propriedade \textit{D} define a quantidade de genes não correspondentes
-(desconjuntados) entre ambos os genomas, enquanto textit{\overline{W}} retrata
+(desconjuntados) entre ambos os genomas, enquanto $\overline{W}$ retrata
 a média da diferença de peso entre os genes correspondentes. A proposta inicial
-de \citeonline{stanley2002neat} sugeria uma diferenciação entre nós em excesso e
+de \citeonline{stanley2002} sugeria uma diferenciação entre nós em excesso e
 desconjuntados, na implementação proposta neste documento ambos foram tratados da
-mesma forma por não haver diferença na aplicação prática. Os coeficientes \textit{c_1}
-e \textit{c_2} são multiplicadores que aumentam ou diminuem a importância dos dois fatores
+mesma forma por não haver diferença na aplicação prática. Os coeficientes $c_1$
+e $c_2$ são multiplicadores que aumentam ou diminuem a importância dos dois fatores
 ao decidir a distância genética.
 
 Realizando uma simples comparação entre dois genomas teóricos, a \autoref{fig_NA} apresenta
@@ -642,7 +642,7 @@ dois genomas que possuem dois nós não correspondentes e uma média de diferen�
 \end{figure}
 
 Aplicando a fórmula apresentada, o valor 2 (dois) é atribuído à quantidade
-de nós não correspondentes (em vermelho), enquanto \textit{\overline{W}} pode ser
+de nós não correspondentes (em vermelho), enquanto $\overline{W}$ pode ser
 assinalado como a soma de todas as diferenças entre vieses dos genes (conexões)
 correspondentes (em verde) dividido pela quantidade de tais genes (oito), resultando em \textit{1,5}.
 
