@@ -7,12 +7,12 @@ possuir um sistema capaz de executar suas funções de forma
 automatizada já vivia no imaginário dos programadores e cientistas da
 época. O termo IA, segundo \citeonline{khemani2013}, só veio a ser
 cunhado de maneira oficial por John McCarthy, organizador do workshop
-de Dartmouth, seu projeto em conjunto com outros cientistas e
-matemáticos da área da computação que resultou em premissas que viriam
-a ser utilizadas utilizadas pelos anos a seguir, e também, a
+de Dartmouth, seu projeto em conjunto de outros cientistas e
+matemáticos da área da computação resultou em premissas que viriam
+a ser utilizadas pelos anos a seguir, e também, a
 apresentação daquele que é considerado o primeiro programa de
 computador funcional como inteligência artificial, criado por Allen
-Newell, Herbert Simon e J. C. Shaw, o Logic Theorist.
+Newell, Herbert Simon e J. C. Shaw, o \textit{Logic Theorist}.
 
 \section{Estruturando um Problema}
 
@@ -30,7 +30,7 @@ Analisando como fazer com que este objetivo seja atingido, é possível
 que as instruções sejam dadas através de movimentos que o carro deve
 realizar, como seguir em frente ou virar à esquerda, mas pelo tamanho
 do problema proposto, a quantidade de instruções a serem dadas
-alcançariam um nível de complexidade muito alto além de serem muito
+alcançariam um nível de complexidade muito alto, além de serem muito
 amplas quanto à quantidade. Estas instruções podem vir a ser
 simplificadas realizando uma diminuição em seu escopo, sendo os
 possíveis passos deste viajante chegar a cidades vizinhas próximas.
@@ -92,7 +92,7 @@ ML e os associa com padrões biológicos humanos, como a ativação de
 neurônios simulada por uma rede neural computacional, explorada
 adiante, esta metodologia utiliza de funções mais complexas como
 convoluções e múltiplas ativações de um neurônio \cite{janiesch2021} e
-geralmente possui uma vantagem em relação à seu supertipo na resolução
+geralmente possui uma vantagem em relação a seu supertipo na resolução
 de problemas de reconhecimento de placas ou de voz, por conseguirem
 encontrar padrões nos dados de entrada dentro da própria tarefa sendo
 executada.
@@ -141,28 +141,28 @@ supervisionado.
 supervisionado é uma simples formalização da ideia de aprender através
 de exemplos. Nessa técnica, os dados fornecidos ao modelo devem passar
 por um tratamento prévio para normalização e organização. Junto a
-isso, os dados são separados em treino e teste. Os dados de treino são
-utilizados para ensinar o modelo, já os de teste são utilizados para
+isso, os dados são separados em treino e teste. Enquanto os dados de treino
+são utilizados para ensinar o modelo, os de teste são utilizados para
 verificar a eficácia do aprendizado, comparando o resultado dado pelo
 modelo com o resultado já conhecido para aquela combinação de
-valores. Por exemplo, para predizer se vai ou não chover com base no
+valores. Por exemplo, para predizer se irá ou não chover com base no
 clima, é necessário que o algoritmo tenha uma larga base de dados
 sobre a situação meteorológica de dias que choveram e de dias que não
 choveram, separando a base em treino e teste e então iniciar o
 processo de aprendizado, verificando a eficácia durante o processo
-para, então, ao atingir uma boa capacidade preditiva seja possível
+para, então, ao atingir uma boa capacidade preditiva, seja possível
 utilizar o modelo com dados abstraídos de situações reais.
 
 \textbf{Não supervisionado}: Os algoritmos que utilizam o aprendizado não
 supervisionado recebem os dados de maneira não necessariamente
-tratados e não rotulados, sem possuir um resultado específico para uma
+tratada e não rotulados, sem possuir um resultado específico para uma
 dada combinação de dados. Esse tipo de aprendizado propicia o
 descobrimento de padrões, sendo possível os categorizar sem a
 necessidade de análise e intervenção humana. O objetivo do aprendizado
 não supervisionado é melhorar o desempenho de tarefas supervisionadas
 quando não se possui uma grande quantidade de dados
 \cite{sutskever2015}. Essa habilidade de descobrir semelhanças e
-diferenças entre utilizando diferentes tipos de dados permite que o
+diferenças utilizando diferentes tipos de dados permite que o
 aprendizado não supervisionado possa ser utilizado em reconhecimento
 de imagem e segmentação de consumidores, onde é possível caracterizar
 tendências de compra com base na maneira com que um grupo de usuários
@@ -172,8 +172,8 @@ utiliza as redes sociais, por exemplo.
 entre supervisionado e não supervisionado. Durante o treinamento, ele
 usa um conjunto de dados rotulados menores para orientar a
 classificação e a extração de recursos de um conjunto de dados maior e
-não rotulado \cite{uibm2022}. Com isso é possível auxiliar o
-descobrimento de diferentes padrões e os classificar baseado no
+não rotulado \cite{uibm2022}. Assim sendo possível auxiliar o
+descobrimento de diferentes padrões e os classificar baseando-se no
 aprendizado previamente realizado com dados tratados.
 
 \section{Aprendizado por refor{\c c}o}
@@ -198,8 +198,8 @@ e seus respectivos identificadores, agindo através de um mapeamento dos dados l
 De maneira contrária, o aprendizado não supervisionado recebe um conjunto de dados 
 sem identificações, sendo responsável por retornar uma classificação para cada um
 destes dados. Já o aprendizado por reforço, de forma distinta, recebe estados e 
-possibilidades de ação e com base nessas toma uma das ações, recebendo um 
-\textit{feedback} através de uma recompensa. 
+possibilidades de ação e com base nessas, toma uma das ações, recebendo um 
+\textit{feedback} de seu desempenho através de uma recompensa. 
 
 \begin{figure}[htb]
   \centering
@@ -226,7 +226,7 @@ Uma das principais aplica{\c c}{\~o}es de aprendizado por refor{\c c}o
 se faz em problemas no espa{\c c}o f{\'i}sico, em que se recebe uma
 quantidade grande de dados e que a rela{\c c}{\~a}o entre tais dados e
 a a{\c c}{\~a}o ou resultado se fazem dif{\'i}ceis por meios
-matem{\'a}ticos. Enquanto esses algor{\'i}tmos performam muito bem na
+matem{\'a}ticos. Enquanto esses algoritmos performam muito bem na
 resolu{\c c}{\~a}o dos problemas, o processo de treinamento no mundo
 real pode ser extremamente custoso e demorado. Nestes casos, simula{\c
   c}{\~o}es (contanto que sejam pr{\'o}ximas o suficiente da
