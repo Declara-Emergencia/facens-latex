@@ -2,7 +2,7 @@
 
 O problema proposto, o qual os testes serão realizados, se dá no próprio
 ambiente de simulação de carros autônomos criado previamente. Com o objetivo de
-medir o impacto do diferencial do NEAT - suas topologias aumentantes - serão
+medir o impacto do diferencial do NEAT — suas topologias aumentantes — serão
 aplicados tr{\^e}s diferentes m{\'e}todos de treinamento:
 
 \begin{enumerate}
@@ -225,13 +225,13 @@ pesos.
     \fonte{Autoria pr{\'o}pria.}
 \end{table}
 
-Pode-se observar a elevada vari{\^a}ncia dos resultados - indicando uma
+Pode-se observar a elevada vari{\^a}ncia dos resultados — indicando uma
 dificuldade do algoritmo evitar os m{\'a}ximos locais com essa quantidade
-elevada de n{\'o}s. Outro ponto observável é a conservação da topologia - o algoritmo
+elevada de n{\'o}s. Outro ponto observável é a conservação da topologia — o algoritmo
 teve melhor performance ao evitar a remo{\c c}{\~a}o de nós, e removendo
 somente uma ou at{\'e} nenhuma das conex{\~o}es.
 
-Tamb{\'e}m percebe-se a occor{\'e}ncia m{\'u}ltipla da gera{\c c}{\~a}o 32 -
+Tamb{\'e}m percebe-se a occor{\'e}ncia m{\'u}ltipla da gera{\c c}{\~a}o 32 —
 isso se d{\'a} pelo funcionamento interno do \textit{neat-python}, em que a
 partir da gera{\c c}{\~a}o 20, come{\c c}a-se a eliminar as esp{\'e}cies
 \textit{estagnadas}, ou seja, indiv{\'i}duos que estavam sendo utilizados pela
@@ -294,7 +294,7 @@ se obteve os resultados apresentados na \autoref{tabela_teste_ne}.
     \fonte{Autoria pr{\'o}pria.}
 \end{table}
 
-Por fim aplicando o mesmo para o NEAT com topologia complexa inicial, se obteve
+Por fimm aplicando o mesmo para o NEAT com topologia complexa inicial, se obteve
 os resultados apresentados na \autoref{tabela_teste_neatc}.
 
 \begin{table}[htb]
@@ -310,7 +310,7 @@ os resultados apresentados na \autoref{tabela_teste_neatc}.
     \fonte{Autoria pr{\'o}pria.}
 \end{table}
 
-\section{Analise de resultados}
+\section{Análise de Resultados}
 
 %% TODO: Finalizar
 
@@ -318,4 +318,4 @@ Parametrização normal com topologia chega a um resultado de \textit{fitness} c
 
 neuroevolucao simples ficou proxima do neat, demorando um pouco mais para atingir \textit{fitness} maiores porem consistentemente ficando melhor a longo prazo.
 
-Topologia inicial complexa mais sucessivel a maximo local, e evitou remover nodes - mesmo assim, a topologia elevada levou a solu{\c c}{\~o}es mais inteligentes
+Topologia inicial complexa mais sucessivel a maximo local, e evitou remover nós — mesmo assim, a topologia elevada levou a solu{\c c}{\~o}es mais inteligentes
