@@ -90,13 +90,13 @@ A sequência de execução a qual o algoritmo está sujeito pode ser expressa na
         }
 \end{figure}
 
-\subsection{Início Pré Execução}
+\subsection{Início pré execução}
 A etapa inicial da execução do algoritmo contempla a criação dos membros da população
 e a forma pela qual os parâmetros predefinidos devem redigir suas ações. Estas propriedades
 vêm a ditar suas duas principais componentes, o genoma, da parte constituinte do algoritmo
 genético e a rede neural, da parcela de aprendizado de máquina.
 
-\subsubsection{Parametrização Predefinida Inicial}
+\subsubsection{Parametrização predefinida inicial}
 De maneira prévia à execução, se faz necessária a atribuição de parâmetros que virão a ser
 utilizados pelo algoritmo para controlar seu processo evolucionário. Estes dados são geralmente
 ajustados em meio a execuções a fim de se obter resultados mais próximos do ideal.
@@ -164,7 +164,7 @@ pode ser representada pela \autoref{fig_CC}.
         }
 \end{figure}
 
-\subsubsection{Inicialização da População}
+\subsubsection{Inicialização da população}
 Considerando a arquitetura de Neuroevolução de Topologias Aumentantes como uma junção das esferas de Algoritmos
 Genéticos e Redes Neurais, a grande maioria de seus conceitos básicos também são expressos na construção desta mescla.
 
@@ -185,7 +185,7 @@ da população da simulação, exemplificados como carros. Os dois principais co
         }
 \end{figure}
 
-\subsubsection{Criação da Rede Neural Individual}
+\subsubsection{Criação da rede neural individual}
 Cada indivíduo da população parte de um mesmo genótipo — levando em conta o princípio de estruturas iniciais mínimas —
 este (tratado como genoma) carrega informações referentes aos nós que o compõem e as suas conexões,
 cada qual com seu devido viés que influenciará nas etapas futuras a tomada de decisão e a especiação de cada membro.
@@ -235,12 +235,12 @@ Esta rede também não está sendo feita com o conceito de \textit{backpropagati
 de testes não possui dados de treino para basear seu desempenho além da própria aptidão obtida, comparável apenas dentro da própria população.
 Isso acarreta na alteração de peso das arestas ocorrendo exclusivamente pelo processo de reprodução.
 
-\subsection{Processo de Execução}
+\subsection{Processo de execução}
 A etapa seguinte da execução do algoritmo trata do fluxo individual de cada carro após a sua parametrização e inicialização.
 Abrangendo a entrada de dados do ambiente de simulação ao carro, e a maneira a qual ele as interpreta e toma decisões em relação a que direção seguir,
 culminando em um aumento de \textit{fitness} e posterior avaliação.
 
-\subsubsection{Leitura do Ambiente}
+\subsubsection{Leitura do ambiente}
 A \autoref{fig_GA} exibe os métodos implementados responsáveis por identificar a distância do carro em relação
 aos obstáculos do ambiente, de modo a atualizá-la em caso de alteração e recuperação para leitura. Estes valores
 são armazenados como números de ponto flutuante.
@@ -288,7 +288,7 @@ esta uma topologia simples de cinco entradas e três saídas totalmente intercon
     \fonte{Autoria pr{\'o}pria.}
 \end{table}
 
-\subsubsection{Ativação da Rede Neural}
+\subsubsection{Ativação da rede neural}
 Os valores lidos a cada \textit{frame} são coletados e enviados como parâmetros para a função de ativação da
 rede neural (vide \autoref{fig_HA}), esta vem a retornar um vetor de saídas, o qual indica qual das saídas deve
 vir a ser ativada para a tomada de decisão do carro.
@@ -403,7 +403,7 @@ O trecho de código com a implementação do cálculo de saída pode ser observa
         }
 \end{figure}
 
-\subsubsection{Tomada de Decisão}
+\subsubsection{Tomada de decisão}
 Considerando o retorno da função como a lista de ativações dos nós de saída, se faz necessário filtrar
 apenas o valor de maior expressão numérica, como concretizado na \autoref{fig_HN}.
 
@@ -428,7 +428,7 @@ Retornando à situação proposta na \autoref{fig_GB} e minuciosamente examinada
 se faz possível notar uma tendência a virar à esquerda de acordo com o ambiente sensorizado —
 ativação do nó de saída de identificador \textit{0} — onde esta parece ser a alternativa que o manterá vivo por mais tempo.
 
-\subsubsection{Avaliação de Desempenho Individual}
+\subsubsection{Avaliação de desempenho individual}
 De acordo com o progresso executado pelo carro ao se mover pelo percurso, este contabiliza a
 distância a partir o ponto de partida e a soma em um contador, baseando-se na posição atual e na
 posição do frame anterior. A \autoref{fig_IA} representa sua implementação através do código.
@@ -471,7 +471,7 @@ sua topologia de rede seja reportado para a formulação da nova geração. O en
         }
 \end{figure}
 
-\subsection{Avaliação Populacional Pós Execução}
+\subsection{Avaliação populacional pós execução}
 A etapa final do ciclo de execução acontece no momento em que a população se encontra extinta.
 
 A tomada de decisão responsável por verificar se o valor limite de aptidão mínima foi encontrado
@@ -479,7 +479,7 @@ define se o algoritmo será interrompido e o genoma originário da rede de solu�
 ou se é necessária a execução de pelo menos mais um ciclo. Os subcapítulos seguintes retratam o cenário
 em caso de demanda da realização de criação de uma nova geração para a próxima iteração.
 
-\subsubsection{Seleção da População}
+\subsubsection{Seleção da população}
 Antes do processo de \textit{crossing-over} ser executado, o parâmetro de inicialização
 \textit{elitism} atua filtrando os melhores indivíduos de cada espécie, criando cópias suas
 à nova geração e assim mantendo a variabilidade genética da população. A \autoref{fig_KA} apresenta a implementação desta função.
@@ -521,7 +521,7 @@ como apresenta a \autoref{fig_KC}.
         }
 \end{figure}
 
-\subsubsection{Reprodução da População Selecionada}
+\subsubsection{Reprodução da população selecionada}
 
 O processo de \textit{crossover} se baseia em mesclar o genoma de ambos os pais,
 seja nas conexões com seus devidos pesos ou nos nós que compõem as suas camadas com seus devidos vieses.
@@ -557,7 +557,7 @@ de realizar o cruzamento de fato, sua implementação é observável na \autoref
         }
 \end{figure}
 
-\subsubsection{Mutação da Nova Geração}
+\subsubsection{Mutação da nova geração}
 A etapa de mutação da nova prole acontece logo após sua reprodução estar completa. Nela contemplam a
 possibilidade de adição ou remoção de nós e conexões, e a alteração de pesos das conexões e viéses dos nós.
 
@@ -605,7 +605,7 @@ utilizando-se de uma entrada \textit{-5} e um nó de saída \textit{0} como exem
         }
 \end{figure}
 
-\subsubsection{Especiação da Nova Geração}
+\subsubsection{Especiação da nova geração}
 Com a intenção de valorizar a inovação dentre as informações contidas em uma população, é de sumo interesse
 que indivíduos que alcaçarem resultados aceitáveis durante a execução sejam mantidos para as próximas gerações,
 pois estes podem conter genes que virão a auxiliar toda a população a alcançar resultados que fujam de máximos locais.
