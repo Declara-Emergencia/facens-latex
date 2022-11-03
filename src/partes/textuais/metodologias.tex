@@ -114,7 +114,7 @@ Por fim, os parâmetros básicos da rede definem sua forma inicial, sendo sempre
 \begin{figure}[htb]
         \centering
         \caption{\label{fig_CC}Organização inicial da rede neural partindo de uma estrutura mínima.}
-        \includegraphics[width=0.7\textwidth]{images/CC.png}
+        \includegraphics[width=0.3\textwidth]{images/CC.png}
         \legend{
                 Fonte: Autoria Pr{\'o}pria.
         }
@@ -127,7 +127,7 @@ Partindo deste princípio, a \autoref{fig_DA} ilustra a construção básica da 
 
 \begin{enumerate}
 	\item \textit{genome} — cromossomo com as características do carro — Composto pelas propriedades que diferenciam cada membro da população, como o peso em suas arestas de conexão, fitness e nós totais, e também as propriedades que acatam todos os indivíduos da mesma população, como as chances de ganhar ou perder nós ou conexões durante a mutação, além da probabilidade deste processo ocorrer e a estrutura inicial a ser passada para a rede no momento de sua criação; 
-	\item \text{brain} —  rede a qual este carro está sujeito — sendo esta composta por todo o seu conjunto de entradas, nós da camada oculta e de saída. Também é responsável pelo processo de tomada de decisão, baseando-se na rede criada a partir das conexões provindas do genoma de origem, retornando uma saída interpretada adequada.
+	\item \textit{brain} —  rede a qual este carro está sujeito — sendo esta composta por todo o seu conjunto de entradas, nós da camada oculta e de saída. Também é responsável pelo processo de tomada de decisão, baseando-se na rede criada a partir das conexões provindas do genoma de origem, retornando uma saída interpretada adequada.
 \end{enumerate}
 
 \begin{figure}[htb]
@@ -204,7 +204,7 @@ De modo a exemplificar uma leitura de dados, a \autoref{fig_GB} representa um ca
         }
 \end{figure}
 
-Através da Tabela GZ é possível estimar valores lidos para este instante, os sensores seguem a ordem numérica de identificadores -5 a -1 considerando o sentido horário da Figura GB, sendo -5 o sensor mais à esquerda e -1 o mais à direita da perspectiva do veículo. Também é possível observar na \autoref{tab_GZ} os pesos obtidos entre as conexões de cada sensor com cada uma das saídas n após o final da execução, considerando esta uma topologia simples de cinco entradas e três saídas totalmente interconectadas.
+Através da \autoref{tab_GZ} é possível estimar valores lidos para este instante, os sensores seguem a ordem numérica de identificadores -5 a -1 considerando o sentido horário da \autoref{fig_GB}, sendo -5 o sensor mais à esquerda e -1 o mais à direita da perspectiva do veículo. Também é possível observar na \autoref{tab_GZ} os pesos obtidos entre as conexões de cada sensor com cada uma das saídas n após o final da execução, considerando esta uma topologia simples de cinco entradas e três saídas totalmente interconectadas.
 
 \begin{table}[htb]
 	\centering
@@ -240,7 +240,7 @@ Após recebidos os valores das cinco entradas, o método de ativação as utiliz
     \caption{\label{tab_HZ}Produto entre a leitura dos sensores e o peso de cada uma de suas arestas.}
     \begin{tabular}{ccccc}
         \hline
-		\textbf{Sensores} & \textbf{Entrada * w$_{\text{1i}}$} & \textbf{Entrada * w$_{\text{2i}}$} & \textbf{Entrada * w$_{\text{3i}}$} \\ \hline
+		\textbf{Sensores} & \textbf{Entrada * w$_{\textit{1i}}$} & \textbf{Entrada * w$_{\textit{2i}}$} & \textbf{Entrada * w$_{\textit{3i}}$} \\ \hline
 		-5 & 6,840  & 88,800   & 198,720    \\ \hline
 		-4 & 517,600  & -266,000   & -562,000    \\ \hline
 		-3 & -58,900  & 3,150   & 77,950   \\ \hline
@@ -253,7 +253,7 @@ Após recebidos os valores das cinco entradas, o método de ativação as utiliz
 
 O produto resultante vem a ser utilizado para a função agregada aplicada aos nós – definida como somatório de início da execução, podendo vir a sofrer mutação, desconsiderada para fins de demonstração padronizada. 
 
-O valor é obtido somando todas as entradas pesadas com as arestas para cada saída, podendo ser observado na \autoref{images/tab_HY}.
+O valor é obtido somando todas as entradas pesadas com as arestas para cada saída, podendo ser observado na \autoref{tab_HY}.
 
 \begin{table}[htb]
 	\centering
@@ -340,7 +340,7 @@ Sua estrutura de decisão seguinte implica na tomada de decisão visível do car
 
 A função completa com todas as etapas anteriores pode ser expressa pela seguinte fórmula:
 
-\[ output = \max_{n}\{n | tanh(bias + response * \sum_{k=0}^{\i} weight_{ni}*input)\} \]
+\[ output = \max_{n}\{n | tanh(bias + response * \sum_{k=0}^{i} weight_{ni}*input)\} \]
 
 Retornando à situação proposta na Figura GB e minuciosamente examinada no subcapítulo 5.3.2.2, se faz possível notar uma tendência a virar à esquerda de acordo com o ambiente sensorizado – ativação do nó de saída de identificador 0 – onde esta parece ser a alternativa que o manterá vivo por mais tempo.
 
@@ -497,7 +497,7 @@ Como definido por \citeonline{stanley2004neat}, a equação responsável por def
 
 \[ \delta = \frac{c_1 * D}{N} + c_2 * \overline{W}\]
 
-A propriedade \textit{D} define a quantidade de genes não correspondentes (desconjuntados) entre ambos os genomas, enquanto textit{\overline{W}} retrata a média da diferença de peso entre os genes correspondentes. A proposta inicial de \citeonline{stanley2002neat} sugeria uma diferenciação entre nós em excesso e desconjuntados, na implementação proposta neste documento ambos foram tratados da mesma forma por não haver diferença na aplicação prática. Os coeficientes \textit{c_1} e \textit{c_2} são multiplicadores aumentam ou diminuem a importância dos dois fatores ao decidir a distância genética.
+A propriedade \textit{D} define a quantidade de genes não correspondentes (desconjuntados) entre ambos os genomas, enquanto $\overline{W}$ retrata a média da diferença de peso entre os genes correspondentes. A proposta inicial de \citeonline{stanley2002} sugeria uma diferenciação entre nós em excesso e desconjuntados, na implementação proposta neste documento ambos foram tratados da mesma forma por não haver diferença na aplicação prática. Os coeficientes $c_1$ e $c_2$ são multiplicadores aumentam ou diminuem a importância dos dois fatores ao decidir a distância genética.
 
 Realizando uma simples comparação entre dois genomas teóricos, a \autoref{fig_NA} apresenta dois genomas que possuem dois nós não correspondentes e uma média de diferença de peso entre os nós de 1,5.
 
@@ -510,7 +510,7 @@ Realizando uma simples comparação entre dois genomas teóricos, a \autoref{fig
         }
 \end{figure}
 
-Aplicando a fórmula apresentada, o valor 2 (dois) é atribuído à quantidade de nós não correspondentes (em vermelho), enquanto \textit{\overline{W}} pode ser assinalado como a soma de todas as diferenças entre vieses dos genes (conexões) correspondentes (em verde) dividido pela quantidade de tais genes (oito), resultando em 1,5.
+Aplicando a fórmula apresentada, o valor 2 (dois) é atribuído à quantidade de nós não correspondentes (em vermelho), enquanto $\overline{W}$ pode ser assinalado como a soma de todas as diferenças entre vieses dos genes (conexões) correspondentes (em verde) dividido pela quantidade de tais genes (oito), resultando em 1,5.
 
 Aplicando um coeficiente de 1 (um) para ambos os pesos, os dois fatores podem ser interpretados como detentores de mesma prioridade. Aplicando à fórmula proposta, obtém-se o resultado o seguinte resultado:
 
