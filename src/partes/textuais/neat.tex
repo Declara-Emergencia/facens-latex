@@ -1,8 +1,8 @@
 \chapter{Tecnologias}
 
 Durante o desenvolvimento desse projeto utilizando o algoritmo NEAT, se fez 
-necessário o entendimento, além do NEAT em si, das tecnologias que compõem o 
-mesmo, sendo elas: Algoritmo Genético e Redes Neurais. 
+necessário o entendimento, além do algoritmo em si, das tecnologias que o compõem,
+sendo elas: Algoritmo Genético e Redes Neurais. 
 
 Essas duas tecnologias quando combinadas de maneira harmoniosa e 
 seguindo as bases teóricas presentes no NEAT, propiciam a melhor abstração do 
@@ -29,7 +29,7 @@ da computação. Porém, de acordo com
 \citeonline{mitchell1998introduction}, algumas
 características, por convenção, sempre estão presentes, como,
 por exemplo: populações de indivíduos, seleção dos mais aptos,
-cálculo de função \textit{fitness}, crossovers para a reprodução e
+cálculo de função \textit{fitness}, \textit{crossovers} para a reprodução e
 mutações aleatórias.
 
 \subsection{Indiv{\'i}duo e popula{\c c}{\~a}o}
@@ -41,10 +41,10 @@ elemento base do AG, o indivíduo.
 Cada indivíduo de uma população é composto por uma sequência
 de cromossomos. Cada cromossomo é composto por um conjunto de
 valores binários. Cada valor binário desse conjunto é chamado
-de gene. Então, com base nisso, é possível concluir que cada
+de gene. Baseando-se nisso, é possível concluir que cada
 indivíduo possui sua forma e comportamento ditados pelo seu
 respectivo cromossomo e uma população é composta por um
-conjunto de n diferentes cromossomos, como pode ser visto na
+conjunto de \textit{n} diferentes cromossomos, como pode ser visto na
 \autoref{fig_gene}.
 
 \begin{figure}[htb]
@@ -64,7 +64,7 @@ população com o intuito de gerar a evolução dos indivíduos e,
 dessa forma, atingir o melhor resultado para a situação. 
 
 Esse processo de reprodução é feito em etapas e ocorre sempre
-que uma geração completa um ciclo de execução pré estabelecido
+que uma geração completa um ciclo de execução preestabelecido
 e há a necessidade de se criar uma nova geração. Esse processo
 de reprodução somente chega ao fim quando o resultado gerado
 pelo AG atinge o valor esperado, ou por uma condição de parada
@@ -96,7 +96,7 @@ indivíduos selecionados, assim como a proporção de reprodução,
 deve ser minimamente suficiente para que a geração seguinte
 possua o mesmo tamanho da anterior.
 
-\subsubsection{Crossover}
+\subsubsection{\textit{Crossover}}
 
 O \textit{crossover} é o responsável por gerar a evolução propriamente
 dita. É durante essa etapa que os indivíduos recebem
@@ -108,24 +108,23 @@ resultados bons. Essa classificação se dá pelo “fato dos
 cromossomos serem tratados apenas como sequências de bits sem
 que sejam feitas inferências a respeito dos seus significados”
 \cite{paulino2018}. Por isso, cromossomos anteriormente bons
-podem perder suas qualidades e obterem resultados piores na
+podem perder suas qualidades e obter resultados piores na
 geração seguinte, porém, a vantagem é que o contrário também é
 verdadeiro. Cromossomos ruins podem ganhar qualidades e
 obterem resultados melhores.
 
-Essas trocar de características e cruzamentos entre
-cromossomos que é chamado de \textit{crossover}. A maneira com a qual o
+Essas trocas de características e cruzamentos entre
+cromossomos é o que se chama de \textit{crossover}. A maneira com a qual o
 \textit{crossover} é desenvolvido varia de acordo com a
 situação em que o AG está inserido. Uma das maneiras mais
 simples de realizar o \textit{crossover} é pegar dois cromossomos, ou
 seja, duas cadeias binárias e realizar a inversão da primeira
 metade do primeiro cromossomo com a segunda metade do segundo
-cromossomo, como demonstrado na \autoref{fig_crossover} a
-seguir.
+cromossomo, como demonstrado na \autoref{fig_crossover}.
 
 \begin{figure}[htb]
         \centering
-        \caption{\label{fig_crossover}Crossover entre dois cromossomos.}
+        \caption{\label{fig_crossover}\textit{Crossover} entre dois cromossomos.}
         \includegraphics[width=0.7\textwidth]{images/crossover.jpg}
         \legend{
                 Fonte: Autoria Pr{\'o}pria.
@@ -134,7 +133,7 @@ seguir.
 
 Dessa maneira ambos os cromossomos se beneficiam, ou não, das
 características do outro sem perder todas as suas próprias
-características. Esse processo cria uma nova população porém,
+características. Esse processo cria uma nova população, porém,
 as características da geração anterior, por mais que
 distribuídas entre os cromossomos, ainda estão presentes, só
 organizadas de maneira diferente, não tendo uma evolução
@@ -172,10 +171,10 @@ neurônio é chamado de \textit{perceptron}.
 
 \subsection{\textit{Perceptron}}
 
-Um perceptron funciona recebendo e somando entradas \(x\) multiplicadas por 
+Um \textit{perceptron} funciona recebendo e somando entradas \(x\) multiplicadas por 
 um peso \(w\)correspondente junto com uma entrada de valor 1 sempre presente 
 multiplicada por uma constante \(\theta\) chamada de viés. Esse somatório gera uma saída 
-s que pode ser expressa por \(s = \theta + xw\) e que passa por uma função de ativação 
+\textit{s} que pode ser expressa por \(s = \theta + xw\) e que passa por uma função de ativação 
 que suaviza a curva de saída. Nesse projeto será utilizada a função de ativação 
 \(tanh\), gerando então a saída \(s = tanh( \theta + xw)\). Uma visualização gráfica de tal 
 estrutura pode ser encontrada na \autoref{fig_perceptron}.
@@ -190,21 +189,21 @@ estrutura pode ser encontrada na \autoref{fig_perceptron}.
 \end{figure}
 
 {\'E} no \textit{perceptron} que as decisões são tomadas, porém, para que se tenha a 
-característica de malha que a Rede requer, interações entre \textit{perceptrons} se faz 
-necessária, com cada \textit{perceptron} possuindo diferentes pesos e métricas definidos 
+característica de malha que a Rede requer, interações entre \textit{perceptrons} se fazem 
+necessárias, com cada \textit{perceptron} possuindo diferentes pesos e métricas definidos 
 pelos resultados de saída de outros \textit{perceptrons}.
 
 \subsection{\textit{Perceptrons} em m{\'u}ltiplas camadas}
 
-Quando um \textit{perceptron} se associa a outros, através de diversas conexões 
+Quando um \textit{perceptron} se associa a outros, através das diversas conexões 
 entre si, a estrutura de Rede Neural propriamente dita começa a se formar. Essas 
-mesmas conexões entre os perceptrons são separadas em 3 camadas: de entrada, 
+mesmas conexões entre os \textit{perceptrons} são separadas em 3 camadas: de entrada, 
 ocultas e de saída.
 
 A camada de entrada tem como objetivo receber as informações do meio 
 externo, e, posteriormente, abastecer a primeira camada oculta com estes mesmos 
 dados. Cada \textit{perceptron} da primeira camada oculta recebe a saída de todos os 
-\textit{perceptrons} da camada de entrada, com pode ser visto na \autoref{fig_camadasOocultas}.
+\textit{perceptrons} da camada de entrada, como pode ser visto na \autoref{fig_camadasOocultas}.
 
 \begin{figure}[htb]
         \centering
@@ -215,29 +214,29 @@ dados. Cada \textit{perceptron} da primeira camada oculta recebe a saída de tod
         }
 \end{figure}
 
-O nome de camadas ocultas se dá pelo fato de que os valores das arestas de 
-conexão são desconhecidos, sendo visível somente as entradas e as saídas ao final 
-do processamento. A precisão obtida depende do número de perceptrons utilizados 
+O nome de camada oculta se dá pelo fato de que os valores das arestas de 
+conexão são desconhecidos, sendo visíveis somente as entradas e as saídas ao final 
+do processamento. A precisão obtida depende do número de \textit{perceptrons} utilizados 
 nas camadas ocultas, sendo dentro das camadas ocultas que acontece o 
 processamento bruto dos dados recebidos da camada de entrada \cite{liu2008uso}, 
-onde o alto grau de comunicação dos perceptrons gera diversos resultados 
-que são avaliados por outros perceptrons antes de serem encaminhados para a 
+onde o alto grau de comunicação dos \textit{perceptrons} gera diversos resultados 
+que são avaliados por outros \textit{perceptrons} antes de serem encaminhados para a 
 camada de saída. A maneira com a qual uma camada oculta se comporta é definida 
 durante a modelagem das camadas e, também, o treinamento da Rede Neural com 
 um conjunto de dados confiável, como será esclarecido na próxima seção.
 
-Ao final, a camada de saída pega os valores da última camada oculta, os 
+Ao final, a camada de saída coleta os valores da última camada oculta, os 
 interpreta e depois os expõe como resultados obtidos com base nas entradas.
 
 \subsection{Treinamento}
 
 O treinamento de uma Rede Neural se dá alimentando a mesma com uma 
-base de dados previamente conhecida para se possua controle dos valores de 
+base de dados previamente conhecida para que se possua controle dos valores de 
 saída com base nas entradas. Uma das maneiras de tratar a base de dados no 
 treinamento da Rede é utilizar o método de validação cruzada, onde, por exemplo,
 uma base de dados de tamanho 100 tenha 80\% de seus valores utilizados para 
 efetivamente treinar a Rede, com a mesma se balizando ao olhar suas próprias 
-respostas e os 20\% dos dados restantes são utilizados para simular um ambiente 
+respostas e os 20\% dos dados restantes sendo utilizados para simular um ambiente 
 real, onde a Rede exprime uma resposta com base nas entradas apenas. 
 
 O conceito de se auto balizar da Rede pode ser dados por diversos 
@@ -248,7 +247,7 @@ De acordo com \citeonline{rojas2013neural}, durante esse processo, a cada respos
 a Rede redistribui os pesos \(w\) nas arestas dos \textit{perceptrons} necessários em um 
 movimento que parte da camada saída, passando pelas camadas ocultas e 
 chegando até a camada de entrada, alterando também o viés de cada um para que 
-seja então possível obter a resposta correta. Esse processo vai então ensinando a 
+seja então possível obter a resposta correta. Esse processo é responsável por ensinar a 
 Rede como se comportar em diferentes situações.
 
 De maneira mais abstraída, cada \textit{perceptron} possui uma resposta que é 
@@ -276,7 +275,7 @@ um conjunto de cromossomos compostos por Redes Neurais, onde os genes são
 separados em duas listas: uma de \textit{perceptrons} e outra com arestas de conexão e o 
 viés de cada \textit{perceptron}. O processo de reprodução também se dá da mesma 
 maneira, utilizando a função \textit{fitness} no processo de seleção e mantendo as etapas 
-de crossover e mutação. Como pode ser observado, a Rede Neural não mais evolui 
+de \textit{crossover} e mutação. Como pode ser observado, a Rede Neural não mais evolui 
 com algoritmos do tipo \textit{backpropagation} como citado no capítulo sobre Redes 
 Neurais, mas sim com base no cruzamento entre as características de outras Redes 
 e, também, por meio da mutação, onde uma conexão pode ser retirada 
@@ -298,36 +297,36 @@ estabelecidas na literatura base do NEAT.
 
 \subsection{Tr{\'i}ade de Efici{\^e}ncia}
 
-De acordo com \citeonline{stanley2002} , a eficiência do NEAT é proveniente de um 
-tripé que consiste em promover cruzamentos genéticos que não empobrecem a 
+De acordo com \citeonline{stanley2002}, a eficiência do NEAT é proveniente de um 
+tripé que consiste em promover cruzamentos genéticos que não empobreçam a 
 capacidade computacional das proles em relação aos pais, proteger inovações 
 genéticas por meio do processo de especiação e buscar soluções a partir de 
 topologias simples, incrementando-as gradativamente. 
 
 Para que o algoritmo atinja o objetivo de gerar uma reprodução sem que se 
 tenha perda na capacidade computacional, a codificação do AG deve assegurar que 
-durante o processo de seleção para a reprodução seja feita de maneira correta, 
-selecionando as topologias com melhor fitness e também garantindo que haja 
-pluralidade de características quando selecionando topologias de pior desempenho 
-para que se consiga captar boas qualidades mesmo com menos desempenho. Com 
-esse processo inclusive se faz possível a geração de espécies, abrangendo o 
+durante o processo de seleção para a reprodução, esta seja feita de maneira correta, 
+selecionando as topologias com melhor \textit{fitness} e também garantindo que haja 
+pluralidade de características quando selecionando topologias de pior desempenho, 
+para que se consiga captar boas qualidades mesmo possuindo um desempenho baixo. Com 
+esse processo se faz possível a geração de espécies, abrangendo o 
 segundo ponto do tripé proposto por \citeonline{stanley2002}.
 
-A especiação é colocada como caminho para que os resultados provenientes 
-do NEAT sejam completos e capazes de se adaptar em diferentes situações. Ao 
-observar uma geração onde todos possuem as mesmas características com um 
+A especiação é colocada como um caminho para que os resultados provenientes 
+do NEAT sejam completos e capazes de se adaptar em diferentes situações. Observando 
+uma geração onde todos possuem as mesmas características com um 
 bom desempenho em uma cenário específico, ao alterar a situação em que se 
 encontram, a tendência é que todas as topologias demonstrem comportamento 
-parecido, que pode encaixar na situação ou não. Justamente para evitar essa 
-situação que a configuração do AG deve garantir que as topologias de Rede Neural 
-pertencentes à população sejam próximas porém com diferentes qualidades que 
-propicia uma melhor adaptação.
+parecido, que pode ou não encaixar na circunstância proposta. Justamente para evitar essa 
+situação, a configuração do AG deve garantir que as topologias de Rede Neural 
+pertencentes à população sejam próximas, porém com diferentes qualidades que 
+propiciem uma melhor adaptação.
 
 Iniciar uma população de Redes Neurais densas pode ser 
 desnecessariamente custoso, pois o algoritmo precisaria de muito tempo para 
 otimizar estruturas complexas \cite{stanley2002}. Para evitar tal 
 custo elevado, o NEAT inicia suas topologias sem possuir camadas ocultas e com 
-poucas ou nenhuma arestas de conexão, possibilitando o cruzamento e mutação de 
+arestas de conexão diretas entre entradas e saídas, possibilitando o cruzamento e mutação de 
 topologias aleatórias capazes de gerar melhores resultados.
 
 \subsection{Aplica{\c c}{\~a}o no Projeto}
@@ -335,12 +334,12 @@ topologias aleatórias capazes de gerar melhores resultados.
 Trazendo o NEAT para a situação demonstrada por esse projeto, é possível 
 visualizar todos os conceitos supracitados. A simulação no ambiente de carros 
 autônomos se dá com cada veículo em questão possuindo sua própria topologia 
-inicial simples que vai sendo alterada a cada rodada de simulação com o processo 
+inicial simples, sendo esta alterada a cada rodada de simulação com o processo 
 de reprodução das topologias de Rede Neural de acordo com as regras do AG. 
 
 O processo de especiação está suscetível a ocorrer, com veículos possuindo 
 características diferentes entre si focando no mesmo resultado. Por exemplo, há a 
 possibilidade de uma espécie de veículo fazer uma curva à direita de maneira mais 
 suave, percorrendo toda a extensão da curva, ao mesmo tempo em que outro 
-veículo pode fazer um movimento mais seco e abrupto, somente virando a direita, 
+veículo pode fazer um movimento mais seco e abrupto, somente virando à direita, 
 dando uma maior variedade aos indivíduos da população.
