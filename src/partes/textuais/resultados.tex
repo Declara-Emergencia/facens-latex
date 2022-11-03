@@ -312,10 +312,35 @@ os resultados apresentados na \autoref{tabela_teste_neatc}.
 
 \section{Analise de resultados}
 
-%% TODO: Finalizar
+Comparando os dois primeiros cen{\'a}rios, a
+neuroevolu{\c c}{\~a} chegou bem perto da
+performance do NEAT, principalmente nos
+cen{\'a}rios {\`a} longo prazo (10 gera{\c
+c}{\~o}es), em que a neuroevolu{\c c}{\~a}o
+tende a alcan{\c c}ar resultados at{\'e}
+melhores que o NEAT. Enquanto isso pode ser
+atribuido {\`a} simplicidade do problema
+utilizado, observando os resultados de adapta{\c
+c}{\~a} em um ambiente alternativo para teste, o
+NEAT chegou em uma solu{\c c}{\~a} mais
+generalizada do que a neuroevolu{\c c}{\~a}o,
+conseguindo at{\'E} mesmo completar o percurso.
 
-Parametrização normal com topologia chega a um resultado de \textit{fitness} consideravelmente rapido mas acaba falhando no teste.
+Analizando o cen{\'a}rio com a topologia
+complexa, pode-se observar uma dificuldade do
+algoritmo a enfrentar m{\'a}ximos locais,
+levando diversas gera{\c c}{\~o}es para
+ultrapass{\'a}-los. Tamb{\'e}m foi possivel
+observado a perda de performance imediata nas
+altera{\c c}{\~o}es de topologia, fazendo com
+que o algoritmo mantesse sua topologia muito
+proxima da original - o que pode ter acarretado
+o problema de m{\'a}ximos locais. Um ponto
+positivo {\'e} que a topologia complexa levou a
+solu{\c c}{\~o}es mais inteligentes em respeito
+a adapta{\c c}{\~a}o para o ambiente de teste,
+chegando pr{\'o}ximo do final do percurso.
 
-neuroevolucao simples ficou proxima do neat, demorando um pouco mais para atingir \textit{fitness} maiores porem consistentemente ficando melhor a longo prazo.
-
-Topologia inicial complexa mais sucessivel a maximo local, e evitou remover nodes - mesmo assim, a topologia elevada levou a solu{\c c}{\~o}es mais inteligentes
+No geral, a performance dos algoritmos na
+adapta{\c c}{\~a} para a troca do ambiente,
+enquanto poss{\'i}vel, foi inconsistente.
