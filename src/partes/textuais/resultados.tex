@@ -12,8 +12,8 @@ aplicados tr{\^e}s diferentes m{\'e}todos de treinamento:
 \end{enumerate}
 
 %% FIXME: generalidade?
-Alem desses, ser{\'a} tamb{\'e}m aplicado um teste de adapta{\c c}{\~a}o no
-algoritmo, trocando a pista apos o seu treinamento com fim de medir a
+Além destes, ser{\'a} tamb{\'e}m aplicado um teste de adapta{\c c}{\~a}o no
+algoritmo, trocando a pista após o seu processo de treinamento com a finalidadede medir a
 generalidade da tomada de decis{\~a}o.
 
 Tais algoritmos trabalham de diferentes formas a encontrar valores de aptidão
@@ -28,7 +28,8 @@ alcançado após determinado tempo de execução decorrer.
 Os resultados foram obtidos de duas diferentes formas: primeiramente
 encontrando em que geração do algoritmo este consegue alcançar um valor de
 \textit{fitness} mínimo necessário para que o carro execute uma volta completa pelo
-trajeto, definindo assim quão rapidamente ele consegue alcançar uma resposta. A
+trajeto, definindo assim quão rapidamente ele consegue alcançar uma resposta. 
+E também a \textit{fitness} alcançada após determinado número de gerações ter sido executado. A
 \autoref{fig_meta} ilustra dentro do ambiente de simulação o alvo a ser alcançado.
 
 \begin{figure}[htb]
@@ -41,13 +42,13 @@ trajeto, definindo assim quão rapidamente ele consegue alcançar uma resposta. 
 \end{figure}
 
 A Rede Neural inicial é composta por 5 sensores que verificam e alimentam a
-rede a cada movimento do carro e são elencados com os valores que vão de -5 até
--1. Essas 5 entradas estão todas conectadas a cada um das 3 saídas que indicam
-a direção que o carro deve tomar, as saídas vão de 0 até 2, sendo 0 a indicação
-de movimento a esquerda, 1 a direito e 2 para frente. Cada conexão entre cada
+rede a cada movimento do carro e são elencados com os valores que vão de \textit{-5} até
+\textit{-1}. Essas 5 entradas estão todas conectadas a cada uma das 3 saídas que indicam
+a direção que o carro deve tomar, as saídas vão de \textit{0} até \textit{2}, sendo \textit{0} a indicação
+de movimento à esquerda, \textit{1} à direita e 2 para frente. Cada conexão entre cada
 sensor de entrada e cada nó de saída possui um peso específico que serve para a
 geração do valor de saída. A estrutura indicada acima pode ser encontrada na
-\autoref{fig_nn1} abaixo.
+\autoref{fig_nn1}.
 
 \begin{figure}[htb]
         \centering
@@ -80,7 +81,7 @@ juntamente da topologia resultante em cada iteração.
 
 \begin{table}[htb]
 	\centering
-    \caption{\label{tabela_neat}Resultados obtidos pelo NEAT até a meta de Fitness ser alcançada.}
+    \caption{\label{tabela_neat}Resultados obtidos pelo NEAT até a meta de \textit{Fitness} ser alcançada.}
     \begin{tabular}{ccccc}
         \hline
 		\textbf{Itera{\c c}{\~o}es} & \textbf{Topologia} & \textbf{Gera{\c c}{\~a}o} & \textbf{\textit{Fitness}} & \textbf{\textit{Fitness} média} \\ \hline
@@ -94,9 +95,9 @@ juntamente da topologia resultante em cada iteração.
 Como observável na \autoref{fig_nn2}, a terceira iteração obteve uma  topologia
 a qual indica a existência de quatro nós e treze conexões totais, este nó
 intermediário, inserido após um processo de mutação, serve como uma conexão na
-camada oculta entre a entrada -2 e as saídas 1 e 2. Além desta alteração, a
-topologia também sofreu alterações com a remoção da conexão entre a entrada -3
-e saída 0, julgada pelo algoritmo como uma melhoria para o desempenho durante
+camada oculta entre a entrada \textit{-2} e as saídas \textit{1} e \textit{2}. Além desta mudança, a
+topologia também sofreu alterações com a remoção da conexão entre a entrada \textit{-3}
+e saída \textit{0}, julgada pelo algoritmo como uma melhoria para o desempenho durante
 suas mutações e cruzamentos.
 
 \begin{figure}[htb]
@@ -127,8 +128,8 @@ observáveis na \autoref{tabela_neat_10}.
 
 Observando a topologia da iteração de número 2, é possível verificar que esta
 que obteve a maior \textit{fitness} em 10 gera{\c c}{\~o}es, identificou como
-uma melhora no resultado a quebra da conexão entre a entrada -5 e a saída 0 e a
-entrada -1 e saída 2, como observável na \autoref{fig_nn3}.
+uma melhora no resultado a quebra da conexão entre a entrada \textit{-5} e a saída \textit{0} e a
+entrada \textit{-1} e saída \textit{2}, como observável na \autoref{fig_nn3}.
 
 \begin{figure}[htb]
         \centering
@@ -147,7 +148,7 @@ porém sem a possibilidade de haver adições ou subtrações de nós (nas camad
 ocultas) ou conexões (entre entradas, nós e saídas).
 
 Como apresentado na \autoref{tabela_ne}, o algoritmo foi executado três vezes com
-diferentes valores para \textit{fitness} alcançada e em que geração esta se deu,
+diferentes valores para \textit{fitness} alcançada e em que geração estas se deram,
 considerando uma população de 300 integrantes.
 
 A coluna de topologia não se faz necessária considerando que este, por se
@@ -226,13 +227,13 @@ pesos.
 
 Pode-se observar a elevada vari{\^a}ncia dos resultados - indicando uma
 dificuldade do algoritmo evitar os m{\'a}ximos locais com essa quantidade
-elevada de n{\'o}s. Outro ponto seria o mantenimento da topologia - o algoritmo
-teve melhor performance ao evitar a remo{\c c}{\~a}o de nodes, e removendo
+elevada de n{\'o}s. Outro ponto observável é a conservação da topologia - o algoritmo
+teve melhor performance ao evitar a remo{\c c}{\~a}o de nós, e removendo
 somente uma ou at{\'e} nenhuma das conex{\~o}es.
 
 Tamb{\'e}m percebe-se a occor{\'e}ncia m{\'u}ltipla da gera{\c c}{\~a}o 32 -
 isso se d{\'a} pelo funcionamento interno do \textit{neat-python}, em que a
-partir da gera{\c c}{\~a}o 20 come{\c c}a a eliminar as esp{\'e}cies
+partir da gera{\c c}{\~a}o 20, come{\c c}a-se a eliminar as esp{\'e}cies
 \textit{estagnadas}, ou seja, indiv{\'i}duos que estavam sendo utilizados pela
 possibilidade de haver caracter{\'i}sticas {\'u}teis, por{\'e}m n{\~a} deram
 resultado. Com essa popula{\c c}{\~a}o removida, o algoritmo consegue assim
@@ -242,9 +243,9 @@ atingir o objetivo em algumas gera{\c c}{\~o}es.
 
 %% FIXME: generalidade?
 O ambiente de teste foi estruturado como mostrado na \autoref{fig_teste}, de
-modo semelhante ao ambiente de treino por{\'e}m com altera{\c c}{\~o}es no
+modo semelhante ao ambiente de treino, por{\'e}m, com altera{\c c}{\~o}es no
 percurso de modo a testar a generalidade da solu{\c c}{\~a}o encontrada. Os
-algoritmos foram rodados at{\'e} a meta previamente determinada (em torno de
+algoritmos foram executados at{\'e} a meta previamente determinada (em torno de
 16000 de \textit{fitness}) e no fim do treinamento foram expostos ao novo
 ambiente, tendo a medida de sua dist{\^a}ncia percorrida at{\'e} a primeira
 colis{\~a}o.
@@ -258,15 +259,15 @@ colis{\~a}o.
         }
 \end{figure}
 
-Uma medida de sucesso seria o percorrimento do caminho completo, o que foi
-medido como sendo um numero proximo de 1200 de dist{\^a}ncia.
+Uma medida de sucesso pode ser considerada o caminho completo ser percorrido, o que foi
+medido como sendo um número próximo de 1200 de dist{\^a}ncia.
 
 Aplicando essa t{\'e}cnica com o algoritmo NEAT parametrizado, se obteve os
 resultados apresentados na \autoref{tabela_teste_neat}.
 
 \begin{table}[htb]
 	\centering
-	\caption{\label{tabela_teste_neat}Resultados obtidos pelo NEAT sendo exposto a um ambiente diferente ap{\'o}s a meta de Fitness ser alcançada.}
+	\caption{\label{tabela_teste_neat}Resultados obtidos pelo NEAT sendo exposto a um ambiente diferente ap{\'o}s a meta de \textit{Fitness} ser alcançada.}
     \begin{tabular}{ccccc}
         \hline
 		\textbf{Itera{\c c}{\~o}es} & \textbf{Topologia} & \textbf{Gera{\c c}{\~a}o} & \textbf{\textit{Fitness}} & \textbf{Resultado do teste} \\ \hline
@@ -282,7 +283,7 @@ se obteve os resultados apresentados na \autoref{tabela_teste_ne}.
 
 \begin{table}[htb]
 	\centering
-	\caption{\label{tabela_teste_ne}Resultados obtidos pela neuroevolu{\c c}{\~a}o sem topologia vari{\'a}vel sendo exposta a um ambiente diferente ap{\'o}s a meta de Fitness ser alcançada.}
+	\caption{\label{tabela_teste_ne}Resultados obtidos pela neuroevolu{\c c}{\~a}o sem topologia vari{\'a}vel sendo exposta a um ambiente diferente ap{\'o}s a meta de \textit{Fitness} ser alcançada.}
     \begin{tabular}{ccccc}
         \hline
 		\textbf{Itera{\c c}{\~o}es} & \textbf{Topologia} & \textbf{Gera{\c c}{\~a}o} & \textbf{\textit{Fitness}} & \textbf{Resultado do teste} \\ \hline
@@ -298,7 +299,7 @@ os resultados apresentados na \autoref{tabela_teste_neatc}.
 
 \begin{table}[htb]
 	\centering
-	\caption{\label{tabela_teste_neatc}Resultados obtidos pelo NEAT com topologia inicial complexa sendo exposto a um ambiente diferente ap{\'o}s a meta de Fitness ser alcançada.}
+	\caption{\label{tabela_teste_neatc}Resultados obtidos pelo NEAT com topologia inicial complexa sendo exposto a um ambiente diferente ap{\'o}s a meta de \textit{Fitness} ser alcançada.}
     \begin{tabular}{ccccc}
         \hline
 		\textbf{Itera{\c c}{\~o}es} & \textbf{Topologia} & \textbf{Gera{\c c}{\~a}o} & \textbf{\textit{Fitness}} & \textbf{Resultado do teste} \\ \hline
@@ -313,7 +314,7 @@ os resultados apresentados na \autoref{tabela_teste_neatc}.
 
 %% TODO: Finalizar
 
-Parametrizacao normal com topologia chega a um resultado de \textit{fitness} consideravelmente rapido mas acaba falhando no teste.
+Parametrização normal com topologia chega a um resultado de \textit{fitness} consideravelmente rapido mas acaba falhando no teste.
 
 neuroevolucao simples ficou proxima do neat, demorando um pouco mais para atingir \textit{fitness} maiores porem consistentemente ficando melhor a longo prazo.
 
