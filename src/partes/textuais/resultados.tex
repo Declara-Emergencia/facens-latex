@@ -3,12 +3,18 @@
 O problema proposto, o qual os testes serão realizados, se dá no próprio
 ambiente de simulação de carros autônomos criado previamente. Com o objetivo de
 medir o impacto do diferencial do NEAT - suas topologias aumentantes - serão
-aplicados dois diferentes algoritmos de inteligência artificial:
+aplicados tr{\^e}s diferentes m{\'e}todos de treinamento:
 
 \begin{enumerate}
-	\item NEAT, proveniente do \textit{neat-python} pós parametrização; 
+	\item NEAT, proveniente do \textit{neat-python} pós parametrização, com topologia inicial m{\'i}nima;
 	\item Neuroevolução, através da aplicação de um algoritmo genético sobre uma rede neural simples (sem topologias aumentantes);
+	\item NEAT, com topologia inicial complexa.
 \end{enumerate}
+
+%% FIXME: generalidade?
+Alem desses, ser{\'a} tamb{\'e}m aplicado um teste de adapta{\c c}{\~a}o no
+algoritmo, trocando a pista apos o seu treinamento com fim de medir a
+generalidade da tomada de decis{\~a}o.
 
 Tais algoritmos trabalham de diferentes formas a encontrar valores de aptidão
 para suas simulações. De modo a generalizar a classificação de resultados, foi
@@ -56,8 +62,8 @@ O processo de aprendizado de uma determinada rede veio a ser executado em um
 ambiente de treinos, o qual, tratando-se do algoritmo NEAT, a topologia parte
 de seu estado mais simples até possuir um determinado formato da qual é capaz
 de finalizar o percurso, sendo tratada como a resposta ideal proposta. O
-algoritmo de Neuroevolução e também partem de seu estado mais
-simples até as respostas desejadas neste ambiente.
+algoritmo de Neuroevolução também parte de seu estado mais simples até as
+respostas desejadas neste ambiente.
 
 \section{NEAT}
 
@@ -120,9 +126,9 @@ observáveis na \autoref{tabela_neat_10}.
 \end{table}
 
 Observando a topologia da iteração de número 2, é possível verificar que esta
-que obteve o melhor resultado com o mesmo tempo de execução das demais,
-identificou como uma melhora no resultado a quebra da conexão entre a entrada
--5 e a saída 0 e a entrada -1 e saída 2, como observável na \autoref{fig_nn3}.
+que obteve a maior \textit{fitness} em 10 gera{\c c}{\~o}es, identificou como
+uma melhora no resultado a quebra da conexão entre a entrada -5 e a saída 0 e a
+entrada -1 e saída 2, como observável na \autoref{fig_nn3}.
 
 \begin{figure}[htb]
         \centering
@@ -144,7 +150,7 @@ Como apresentado na \autoref{tabela_ne}, o algoritmo foi executado três vezes c
 diferentes valores para \textit{fitness} alcançada e em que geração esta se deu,
 considerando uma população de 300 integrantes.
 
-A coluna de formato da rede não se faz necessária considerando que este, por se
+A coluna de topologia não se faz necessária considerando que este, por se
 tratar de um algoritmo simples de neuroevolução, possui suas tomadas de
 decisões realizadas apenas na pesagem de suas arestas, sem alterações de
 topologia durante a execução.
@@ -202,3 +208,113 @@ pesos.
                 Fonte: Autoria Pr{\'o}pria.
         }
 \end{figure}
+
+\section{NEAT com Topologia Inicial Complexa}
+
+\begin{table}[htb]
+	\centering
+    \caption{\label{tabela_neatc}Resultados obtidos pelo NEAT com topologia inicial complexa até a meta de Fitness ser alcançada.}
+    \begin{tabular}{ccccc}
+        \hline
+		\textbf{Itera{\c c}{\~o}es} & \textbf{Topologia} & \textbf{Gera{\c c}{\~a}o} & \textbf{\textit{Fitness}} & \textbf{\textit{Fitness} média} \\ \hline
+		1 & (8,40)  & 23  & 16339  & 1010 ± 2314   \\ \hline
+		2 & (8,39)  & 2   & 16429  & 1220 ± 1992   \\ \hline
+		3 & (8,39)  & 23  & 16319  & 1379 ± 2785   \\ \hline
+    \end{tabular}
+    \fonte{Autoria pr{\'o}pria.}
+\end{table}
+
+Pode-se observar a elevada vari{\^a}ncia dos resultados - indicando uma
+dificuldade do algoritmo evitar os m{\'a}ximos locais com essa quantidade
+elevada de n{\'o}s. Outro ponto seria o mantenimento da topologia - o algoritmo
+teve melhor performance ao evitar a remo{\c c}{\~a}o de nodes, e removendo
+somente uma ou at{\'e} nenhuma das conex{\~o}es.
+
+Tamb{\'e}m percebe-se a occor{\'e}ncia m{\'u}ltipla da gera{\c c}{\~a}o 32 -
+isso se d{\'a} pelo funcionamento interno do \textit{neat-python}, em que a
+partir da gera{\c c}{\~a}o 20 come{\c c}a a eliminar as esp{\'e}cies
+\textit{estagnadas}, ou seja, indiv{\'i}duos que estavam sendo utilizados pela
+possibilidade de haver caracter{\'i}sticas {\'u}teis, por{\'e}m n{\~a} deram
+resultado. Com essa popula{\c c}{\~a}o removida, o algoritmo consegue assim
+atingir o objetivo em algumas gera{\c c}{\~o}es.
+
+\section{Adapta{\c c}{\~a}o a ambiente de testes}
+
+%% FIXME: generalidade?
+O ambiente de teste foi estruturado como mostrado na \autoref{fig_teste}, de
+modo semelhante ao ambiente de treino por{\'e}m com altera{\c c}{\~o}es no
+percurso de modo a testar a generalidade da solu{\c c}{\~a}o encontrada. Os
+algoritmos foram rodados at{\'e} a meta previamente determinada (em torno de
+16000 de \textit{fitness}) e no fim do treinamento foram expostos ao novo
+ambiente, tendo a medida de sua dist{\^a}ncia percorrida at{\'e} a primeira
+colis{\~a}o.
+
+\begin{figure}[htb]
+        \centering
+        \caption{\label{fig_teste}Percurso alternativo de teste.}
+        \includegraphics[width=0.5\textwidth]{images/teste.png}
+        \legend{
+                Fonte: Autoria Pr{\'o}pria.
+        }
+\end{figure}
+
+Uma medida de sucesso seria o percorrimento do caminho completo, o que foi
+medido como sendo um numero proximo de 1200 de dist{\^a}ncia.
+
+Aplicando essa t{\'e}cnica com o algoritmo NEAT parametrizado, se obteve os
+resultados apresentados na \autoref{tabela_teste_neat}.
+
+\begin{table}[htb]
+	\centering
+	\caption{\label{tabela_teste_neat}Resultados obtidos pelo NEAT sendo exposto a um ambiente diferente ap{\'o}s a meta de Fitness ser alcançada.}
+    \begin{tabular}{ccccc}
+        \hline
+		\textbf{Itera{\c c}{\~o}es} & \textbf{Topologia} & \textbf{Gera{\c c}{\~a}o} & \textbf{\textit{Fitness}} & \textbf{Resultado do teste} \\ \hline
+		1 & (3,13)  & 9   & 16384  & 1386   \\ \hline
+		2 & (4,12)  & 8   & 16412  & 134    \\ \hline
+		3 & (3,12)  & 7   & 16348  & 250    \\ \hline
+    \end{tabular}
+    \fonte{Autoria pr{\'o}pria.}
+\end{table}
+
+Aplicando o mesmo para a neuroevolu{\c c}{\~a}o sem topologias vari{\'a}veis,
+se obteve os resultados apresentados na \autoref{tabela_teste_ne}.
+
+\begin{table}[htb]
+	\centering
+	\caption{\label{tabela_teste_ne}Resultados obtidos pela neuroevolu{\c c}{\~a}o sem topologia vari{\'a}vel sendo exposta a um ambiente diferente ap{\'o}s a meta de Fitness ser alcançada.}
+    \begin{tabular}{ccccc}
+        \hline
+		\textbf{Itera{\c c}{\~o}es} & \textbf{Topologia} & \textbf{Gera{\c c}{\~a}o} & \textbf{\textit{Fitness}} & \textbf{Resultado do teste} \\ \hline
+		1 & (3,15)  & 8   & 16357  & 167  \\ \hline
+		2 & (3,15)  & 16  & 16354  & 16   \\ \hline
+		3 & (3,15)  & 4   & 16319  & 22   \\ \hline
+    \end{tabular}
+    \fonte{Autoria pr{\'o}pria.}
+\end{table}
+
+Por fim aplicando o mesmo para o NEAT com topologia complexa inicial, se obteve
+os resultados apresentados na \autoref{tabela_teste_neatc}.
+
+\begin{table}[htb]
+	\centering
+	\caption{\label{tabela_teste_neatc}Resultados obtidos pelo NEAT com topologia inicial complexa sendo exposto a um ambiente diferente ap{\'o}s a meta de Fitness ser alcançada.}
+    \begin{tabular}{ccccc}
+        \hline
+		\textbf{Itera{\c c}{\~o}es} & \textbf{Topologia} & \textbf{Gera{\c c}{\~a}o} & \textbf{\textit{Fitness}} & \textbf{Resultado do teste} \\ \hline
+		1 & (8,39)  & 23  & 16390  & 1129   \\ \hline
+		2 & (8,38)  & 22  & 16397  & 180   \\ \hline
+		3 & (8,38)  & 2   & 16328  & 133   \\ \hline
+    \end{tabular}
+    \fonte{Autoria pr{\'o}pria.}
+\end{table}
+
+\section{Analise de resultados}
+
+%% TODO: Finalizar
+
+Parametrizacao normal com topologia chega a um resultado de fitness consideravelmente rapido mas acaba falhando no teste.
+
+neuroevolucao simples ficou proxima do neat, demorando um pouco mais para atingir fitness maiores porem consistentemente ficando melhor a longo prazo.
+
+Topologia inicial complexa mais sucessivel a maximo local, e evitou remover nodes - mesmo assim, a topologia elevada levou a solu{\c c}{\~o}es mais inteligentes
