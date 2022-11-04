@@ -84,7 +84,7 @@ A sequência de execução a qual o algoritmo está sujeito pode ser expressa na
 \begin{figure}[htb]
         \centering
         \caption{\label{fig_flowchart}Fluxograma geral de execução do algoritmo NEAT aplicado à simulação.}
-        \includegraphics[width=0.7\textwidth]{images/flowchart.png}
+        \includegraphics[width=1.0\textwidth]{images/flowchart.png}
         \legend{
                 Fonte: Autoria Pr{\'o}pria.
         }
@@ -344,7 +344,11 @@ A resposta da função agregada é utilizada como variável independente para a 
 como entrada à função de ativação. A \autoref{tab_HX} ilustra o resultado obtido para cada variável dependente \textit{f(x)}
 seguindo a equação aplicável a cada saída \textit{n}.
 
-\[ f(x) = bias + response * agg_func(n)\]
+\begin{equation}
+\begin{fleqn}
+f(x) = bias + response * agg\_func(n)
+\end{fleqn}
+\end{equation}
 
 O parâmetro \textit{bias} (viés de cada nó) assume o papel de constante da função realizando o ajuste adequado à resposta,
 este se soma ao resultado da função agregada multiplicado pela \textit{response} (resposta) recebida do nó anterior,
@@ -370,7 +374,11 @@ porém o cenário foi desconsiderado a fins de se padronizar a demonstração.
 
 A função empregada assume fórmula a seguir, onde seu \textit{z} é substituído pelo próprio resultado da função polinomial de primeiro grau.
 
-\[ \sigma(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}\]
+\begin{equation}
+\begin{fleqn}
+\sigma(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}
+\end{fleqn}
+\end{equation}
 
 Aplicando a função a cada uma das saídas, obtém-se os resultados presentes na \autoref{tab_HW}, onde
 seus valores de saída estão arredondados para \textit{1} ou \textit{-1} considerando a escala imensa e trivial para a resolução do problema.
@@ -422,7 +430,11 @@ de direção em caso de ativação do nó de número \textit{2}.
 
 A função completa com todas as etapas anteriores pode ser expressa pela seguinte fórmula:
 
-\[ output = \max_{n}\{n | tanh(bias + response * \sum_{k=0}^{i} weight_{ni}*input)\} \]
+\end{equation}
+\end{fleqn}
+output = \max_{n}\{n | tanh(bias + response * \sum_{k=0}^{i} weight_{ni}*input)\}
+\end{fleqn}
+\end{equation}
 
 Retornando à situação proposta na \autoref{fig_GB} e minuciosamente examinada no subcapítulo 5.3.2.2,
 se faz possível notar uma tendência a virar à esquerda de acordo com o ambiente sensorizado —
@@ -618,7 +630,11 @@ distância genética entre dois genomas pode ser expressa abaixo, onde a distân
 pode vir a estar abaixo do limiar de especiação ou acima dele, quando abaixo ambos os genomas
 são considerados da mesma espécie e quando acima, espécies distintas.
 
-\[ \delta = \frac{c_1 * D}{N} + c_2 * \overline{W}\]
+\begin{equation}
+\begin{fleqn}
+\delta = \frac{c_1 * D}{N} + c_2 * \overline{W}
+\end{fleqn}
+\end{equation}
 
 A propriedade \textit{D} define a quantidade de genes não correspondentes
 (desconjuntados) entre ambos os genomas, enquanto $\overline{W}$ retrata
@@ -649,7 +665,12 @@ correspondentes (em verde) dividido pela quantidade de tais genes (oito), result
 Aplicando um coeficiente de 1 (um) para ambos os pesos, os dois fatores podem ser
 interpretados como detentores de mesma prioridade. Aplicando à fórmula proposta, obtém-se o seguinte resultado:
 
-\[ \frac{1 * 2}{10} + 1 * 1,5 = 1,7\]
+\begin{equation}
+\begin{fleqn}
+\frac{1 * 2}{10} + 1 * 1,5 = 1,7
+\end{fleqn}
+\end{equation}
+
 
 Este valor resultante é então interpretado pela parametrização como dentro ou fora do
 limiar mínimo para ser considerado ou não de uma determinada espécie. Caso este se
