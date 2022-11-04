@@ -345,9 +345,7 @@ como entrada à função de ativação. A \autoref{tab_HX} ilustra o resultado o
 seguindo a equação aplicável a cada saída \textit{n}.
 
 \begin{equation}
-\begin{fleqn}
 f(x) = bias + response * agg\_func(n)
-\end{fleqn}
 \end{equation}
 
 O parâmetro \textit{bias} (viés de cada nó) assume o papel de constante da função realizando o ajuste adequado à resposta,
@@ -375,9 +373,7 @@ porém o cenário foi desconsiderado a fins de se padronizar a demonstração.
 A função empregada assume fórmula a seguir, onde seu \textit{z} é substituído pelo próprio resultado da função polinomial de primeiro grau.
 
 \begin{equation}
-\begin{fleqn}
 \sigma(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}
-\end{fleqn}
 \end{equation}
 
 Aplicando a função a cada uma das saídas, obtém-se os resultados presentes na \autoref{tab_HW}, onde
@@ -430,10 +426,8 @@ de direção em caso de ativação do nó de número \textit{2}.
 
 A função completa com todas as etapas anteriores pode ser expressa pela seguinte fórmula:
 
-\end{equation}
-\end{fleqn}
+\begin{equation}
 output = \max_{n}\{n | tanh(bias + response * \sum_{k=0}^{i} weight_{ni}*input)\}
-\end{fleqn}
 \end{equation}
 
 Retornando à situação proposta na \autoref{fig_GB} e minuciosamente examinada no subcapítulo 5.3.2.2,
@@ -631,9 +625,7 @@ pode vir a estar abaixo do limiar de especiação ou acima dele, quando abaixo a
 são considerados da mesma espécie e quando acima, espécies distintas.
 
 \begin{equation}
-\begin{fleqn}
 \delta = \frac{c_1 * D}{N} + c_2 * \overline{W}
-\end{fleqn}
 \end{equation}
 
 A propriedade \textit{D} define a quantidade de genes não correspondentes
@@ -666,9 +658,7 @@ Aplicando um coeficiente de 1 (um) para ambos os pesos, os dois fatores podem se
 interpretados como detentores de mesma prioridade. Aplicando à fórmula proposta, obtém-se o seguinte resultado:
 
 \begin{equation}
-\begin{fleqn}
 \frac{1 * 2}{10} + 1 * 1,5 = 1,7
-\end{fleqn}
 \end{equation}
 
 
