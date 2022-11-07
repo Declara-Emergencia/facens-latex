@@ -243,12 +243,35 @@ O conceito de se auto balizar da Rede pode ser dados por diversos
 algoritmos com funcionamentos e finalidades diferentes, porém, para esse projeto, 
 será exposto o algoritmo chamado de \textit{backpropagation}. 
 
-De acordo com \citeonline{rojas2013neural}, durante esse processo, a cada resposta errada 
-a Rede redistribui os pesos \(w\) nas arestas dos \textit{perceptrons} necessários em um 
-movimento que parte da camada saída, passando pelas camadas ocultas e 
+\subsubsection{\textit{Backpropagation}}
+
+De acordo com \citeonline{rojas2013neural}, o algoritmo utiliza de fórmulas matemáticas, 
+como o gradiente descendente, para calcular erros e diminuir a disparidade nas 
+respostas de saída da Rede. Durante o processo de \textit{perceptrons}, a cada 
+resposta, a Rede redistribui os pesos w nas arestas dos \textit{perceptrons} necessários 
+em um movimento que parte da camada saída, passando pelas camadas ocultas e 
 chegando até a camada de entrada, alterando também o viés de cada um para que 
-seja então possível obter a resposta correta. Esse processo é responsável por ensinar a 
-Rede como se comportar em diferentes situações.
+seja então possível obter posteriormente uma resposta melhor e mais precisa. Esse 
+processo vai então ensinando a Rede como se comportar em diferentes situações.
+
+O backpropagation pode ser dividido em duas fases: a fase de cálculo de erro 
+e a fase de redistribuição dos novos pesos aos \textit{perceptrons}. Durante a primeira 
+etapa, utilizando o gradiente, a Rede verifica qual a resposta foi obtida e o quão 
+distante a mesma está do resultado esperado, com esse valor é possível gerar uma 
+função de propagação responsável por corrigir os pesos nas arestas, assim como o 
+viés de cada \textit{perceptron}, e aproximar o resultado gerado pela Rede do resultado 
+real esperado. Na segunda etapa, a Rede se encarrega de pegar essa função de 
+propagação e ir aplicando a mesma nas camadas da Rede, de trás para frente, 
+sendo por isso o nome do algoritmo, porém, essa função de propagação não é a 
+mesma para todas as camadas. 
+
+Com a função implementada na camada de saída, por exemplo, é possível 
+calcular que valor a última camada oculta precisaria ter para chegar no valor 
+necessário na camada de saída. É feito então um cálculo de uma nova função de 
+propagação que é aplicada as arestas de tal camada. Esse mesmo processo é 
+repetido de camada em camada, até que se chegue na primeira camada. Após todo 
+esse processo, a Rede está com os pesos e o viés de cada \textit{perceptron} mais 
+precisos.
 
 De maneira mais abstraída, cada \textit{perceptron} possui uma resposta que é 
 baseada em demais respostas de outros \textit{perceptrons} e também um viés próprio 
