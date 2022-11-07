@@ -15,8 +15,8 @@ realizar um paralelo com redes neurais e algoritmos genéticos.
 
 \section{Metodologia}
 
-A pesquisa proposta neste documento se trata de uma pesquisa básica, pois ela se
-baseia no estudo aprofundando do algoritmo de Neuroevolução de Topologias Aumentantes
+A pesquisa proposta neste documento se trata de uma pesquisa conceitual, pois ela se
+baseia no estudo aprofundado do algoritmo de Neuroevolução de Topologias Aumentantes
 aplicado a um ambiente simulado de autoria própria, explicitando seu funcionamento,
 vantagens e desvantagens em relação a algoritmos de finalidade similar. Sem previsão de
 aplicação prática, esta se limita a utilizar do cenário real apenas como um espelho para
@@ -342,9 +342,10 @@ O valor é obtido somando-se todas as entradas pesadas com as arestas para cada 
 
 A resposta da função agregada é utilizada como variável independente para a função polinomial de primeiro grau a ser utilizada
 como entrada à função de ativação. A \autoref{tab_HX} ilustra o resultado obtido para cada variável dependente \textit{f(x)}
-seguindo a equação aplicável a cada saída \textit{n}.
+seguindo a equação aplicável a cada saída \textit{n} expressa pela Equação \ref{eq_1}.
 
 \begin{equation}
+\label{eq_1}
 f(x) = bias + response * agg\_func(n)
 \end{equation}
 
@@ -370,9 +371,10 @@ Finalmente, o resultado da função polinomial pode ser aplicado à função de 
 tangente hiperbólica \textit{tanh(z)} ao início da execução, esta pode vir a sofrer mutação após o processo de reprodução,
 porém o cenário foi desconsiderado a fins de se padronizar a demonstração.
 
-A função empregada assume fórmula a seguir, onde seu \textit{z} é substituído pelo próprio resultado da função polinomial de primeiro grau.
+A função empregada assume fórmula expressa pela Equação , onde seu \textit{z} é substituído pelo próprio resultado da função polinomial de primeiro grau.
 
 \begin{equation}
+\label{eq_2}
 \sigma(z) = \frac{e^z - e^{-z}}{e^z + e^{-z}}
 \end{equation}
 
@@ -424,9 +426,10 @@ de direção em caso de ativação do nó de número \textit{2}.
         }
 \end{figure}
 
-A função completa com todas as etapas anteriores pode ser expressa pela seguinte fórmula:
+A função completa com todas as etapas anteriores pode ser expressa pela fórmula da Equação \ref{eq_3}:
 
 \begin{equation}
+\label{eq_3}
 output = \max_{n}\{n | tanh(bias + response * \sum_{k=0}^{i} weight_{ni}*input)\}
 \end{equation}
 
@@ -619,12 +622,13 @@ pois estes podem conter genes que virão a auxiliar toda a população a alcanç
 De modo a proteger estes indivíduos, a especiação age de modo a unir sob uma mesma categoria aqueles
 identificados como geneticamente próximos, assim podendo competir entre si e mantendo os de melhor resultado graças ao elitismo.
 
-Como definido por \citeonline{stanley2004neat}, a equação responsável por definir a
-distância genética entre dois genomas pode ser expressa abaixo, onde a distância  encontrada
+Como definido por \citeonline{stanley2004neat}, a Equação \ref{eq_4} é a responsável por definir a
+distância genética entre dois genomas pode ser expressa na equação \, onde a distância  encontrada
 pode vir a estar abaixo do limiar de especiação ou acima dele, quando abaixo ambos os genomas
 são considerados da mesma espécie e quando acima, espécies distintas.
 
 \begin{equation}
+\label{eq_4}
 \delta = \frac{c_1 * D}{N} + c_2 * \overline{W}
 \end{equation}
 
@@ -655,9 +659,10 @@ assinalado como a soma de todas as diferenças entre vieses dos genes (conexões
 correspondentes (em verde) dividido pela quantidade de tais genes (oito), resultando em \textit{1,5}.
 
 Aplicando um coeficiente de 1 (um) para ambos os pesos, os dois fatores podem ser
-interpretados como detentores de mesma prioridade. Aplicando à fórmula proposta, obtém-se o seguinte resultado:
+interpretados como detentores de mesma prioridade. Aplicando à fórmula proposta, obtém-se o resultado presente na Equação \ref{eq_5}:
 
 \begin{equation}
+\label{eq_5}
 \frac{1 * 2}{10} + 1 * 1,5 = 1,7
 \end{equation}
 
