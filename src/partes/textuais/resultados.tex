@@ -11,19 +11,13 @@ aplicados tr{\^e}s diferentes m{\'e}todos de treinamento:
 	\item NEAT, com topologia inicial complexa.
 \end{enumerate}
 
-%% FIXME: generalidade?
-Além destes, ser{\'a} tamb{\'e}m aplicado um teste de adapta{\c c}{\~a}o no
-algoritmo, trocando a pista após o seu processo de treinamento com a finalidadede medir a
-generalidade da tomada de decis{\~a}o.
-
 Tais algoritmos trabalham de diferentes formas a encontrar valores de aptidão
 para suas simulações. De modo a generalizar a classificação de resultados, foi
-proposto a construção de um valor de pontua{\c c}{\~a}o atrelado à distância percorrida pelo
-carro em sua execução.
-
-Esta métrica pode vir a ser comparada entre métodos a fim de se encontrar
-quanto tempo é necessário para se alcançar determinada \textit{fitness} e quanto é
-alcançado após determinado tempo de execução decorrer.
+proposto a construção de um valor de pontua{\c c}{\~a}o atrelado à distância
+percorrida pelo carro em sua execução.  Esta métrica pode vir a ser comparada
+entre métodos a fim de se encontrar quanto tempo é necessário para se alcançar
+determinada \textit{fitness} e quanto é alcançado após determinado tempo de
+execução decorrer.
 
 Os resultados foram obtidos de duas diferentes formas: primeiramente
 encontrando em que geração do algoritmo este consegue alcançar um valor de
@@ -35,11 +29,15 @@ E também a \textit{fitness} alcançada após determinado número de gerações 
 \begin{figure}[htb]
         \centering
         \caption{\label{fig_meta}Canto inferior esquerdo definido como meta a ser alcançada para obtenção de resultado.}
-        \includegraphics[width=0.5\textwidth]{images/meta.png}
+        \includegraphics[width=0.4\textwidth]{images/meta.png}
         \legend{
                 Fonte: Autoria Pr{\'o}pria.
         }
 \end{figure}
+
+Além destes, ser{\'a} tamb{\'e}m aplicado um teste de adapta{\c c}{\~a}o no
+algoritmo, trocando a pista após o seu processo de treinamento com a finalidadede medir a
+generalidade da tomada de decis{\~a}o.
 
 A Rede Neural inicial é composta por 5 sensores que verificam e alimentam a
 rede a cada movimento do carro e são elencados com os valores que vão de \textit{-5} até
@@ -212,6 +210,14 @@ pesos.
 
 \section{NEAT com Topologia Inicial Complexa}
 
+De forma a observar o funcionamento do NEAT com o inicio de topologia complexa,
+tamb{\'e}m se fez uso da mesma estrutura utilizada anteriormente pelo NEAT, por{\'e}m com
+cinco n{\'o}s adicionados como camada oculta. Esses n{\'o}s foram conectados completamente
+com as entradas, e tamb{\'e}m com as sa{\'i}das.
+
+Com os mesmos fatores utilizados nos testes anteriores, se obteve os resultados
+presentes na \autoref{tabela_neatc}.
+
 \begin{table}[htb]
 	\centering
     \caption{\label{tabela_neatc}Resultados obtidos pelo NEAT com topologia inicial complexa até a meta de \textit{Fitness} ser alcançada.}
@@ -241,7 +247,6 @@ atingir o objetivo em algumas gera{\c c}{\~o}es.
 
 \section{Adapta{\c c}{\~a}o a ambiente de testes}
 
-%% FIXME: generalidade?
 O ambiente de teste foi estruturado como mostrado na \autoref{fig_teste}, de
 modo semelhante ao ambiente de treino, por{\'e}m, com altera{\c c}{\~o}es no
 percurso de modo a testar a generalidade da solu{\c c}{\~a}o encontrada. Os
@@ -253,7 +258,7 @@ colis{\~a}o.
 \begin{figure}[htb]
         \centering
         \caption{\label{fig_teste}Percurso alternativo de teste.}
-        \includegraphics[width=0.5\textwidth]{images/teste.png}
+        \includegraphics[width=0.4\textwidth]{images/teste.png}
         \legend{
                 Fonte: Autoria Pr{\'o}pria.
         }

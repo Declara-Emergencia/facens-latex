@@ -1,28 +1,57 @@
-%% TODO: Finalizar
-
-% resumo em português
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
 \begin{resumo}
-    Segundo a \citeonline[3.1-3.2]{NBR6028:2003}, o resumo deve ressaltar o
-    objetivo, o método, os resultados e as conclusões do documento. A ordem e a extensão
-    destes itens dependem do tipo de resumo (informativo ou indicativo) e do
-    tratamento que cada item recebe no documento original. O resumo deve ser
-    precedido da referência do documento, com exceção do resumo inserido no
-    próprio documento. (\ldots) As palavras-chave devem figurar logo abaixo do
-    resumo, antecedidas da expressão Palavras-chave:, separadas entre si por
-    ponto e finalizadas também por ponto.
+	Carros autonomos v{\^e}m sendo um campo de estudo cada vez mais discutido
+	nos {\'u}ltimos anos, com um mercado em forte crescimento - tendo sua taxa
+	de crescimento acumulativa estipulada em 25,7\% \cite{globe2022}. Mesmo com
+	esse crescimento, o mercado se v{\^e} restrito a poucas empresas, que
+	est{\~a}o dispostas a arcar com os grandes investimento que o
+	desenvolvimento e treinamento dessas solu{\c c}{\~o}es podem trazer. Com
+	base nessa situa{\c c}{\~a}o, este projeto visa explorar uma alternativa ao
+	modelo tradicional de carro aut{\^o}nomo, deixando de usar GPS e vis{\~a}o
+	computacional e passando a se basear em aprendizado por refor{\c c}o, e
+	principalmente no algoritmo NEAT (\textit{Neuroevolution of Augmenting
+	Topologies}), um algoritmo baseado em redes neurais e algoritmo
+	gen{\'e}tico para o aprendizado com m{\'i}nima necessidade de recursos -
+	tanto em termos de aquisi{\c c}{\~a}o de dados quanto de performance. Foi
+	utilizado um ambiente simulado em que o NEAT utiliza sensores de
+	dist{\^a}ncia para progressivamente aprender a percorrer o caminho
+	designado. Enquanto tenha sido obtido sucesso neste aprendizado, a
+	inconsist{\^e}ncia na generaliza{\c c}{\~a}o da solu{\c c}{\~a}o encontrada
+	pelo algoritmo (indicada pela performance na troca do percurso ap{\'o}s o
+	treinamento) sugere a inaptid{\~a}o deste algoritmo a operar em ambientes
+	imprevis{\'i}veis. Mesmo assim, a facilidade de treinamento e funcionamento
+	fazem com que a utiliza{\c c}{\~a}o do NEAT seja sujeita a considera{\c
+	c}{\~a}o em contextos de ambientes mais controlados e recursos limitados.
 
-    \textbf{Palavras-chave}: latex. abntex. editoração de texto.
+	\textbf{Palavras-chave}: Intelig{\^e}ncia Artificial. Aprendizado por Refor{\c c}o. Carros aut{\^o}nomos. Aprendizado de M{\'a}quina.
 \end{resumo}
 
-% resumo em inglês
 \begin{resumo}[Abstract]
-    \begin{otherlanguage*}{english}
-        This is the english abstract.
+	\begin{otherlanguage*}{english}
+		Autonomous cars have been an increasingly discussed field of study in
+		the last years, with a strong market growth - it's cummulative annual
+		growth rate stipulated in 25.7\% \cite{globe2022}. Even with this
+		growth, the market is restricted to few companies that are willing to
+		bear the great investments that the development and trainings of these
+		solutions can bring. Based on this, this projects seeks to explore an
+		alternative to the tradicional autonomous car model, exchanging the use
+		of GPS and computer vision with having a base on reinforcement
+		learning, and primarily in the algorithm NEAT (\textit{Neuroevolution
+		of Augmenting Topologies}), an algorithm based on neural networks and
+		genetic algorithm for learning with minimum resources needed - both in
+		monetary terms and in performance terms. A simulated environment was
+		used in which NEAT uses distance sensors to progressively learn to
+		travel the designaded path. While success was achieved in this
+		training, the inconsistence of the generalization in the solution found
+		by the algorithm (indicated by the performance when the track is
+		switched after the training) suggests the inaptitude of the algorithm
+		when operating in unpredictable environments. Nevertheless, the ease of
+		training and operation make NEAT worth consideration in more
+		predictable and low-resource contexts.
 
         \vspace{\onelineskip}
 
         \noindent 
-        \textbf{Keywords}: latex. abntex. text editoration.
+        \textbf{Keywords}: Artificial Intelligence. Reinforcement Learning. Autonomous Cars. Machine Learning.
     \end{otherlanguage*}
 \end{resumo}
