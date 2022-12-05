@@ -108,12 +108,12 @@ ao problema em questão não sendo ela uma verdade universalmente aplicável.
 
 Desta forma, ao algoritmo proposto à simulação desenvolvida, os parâmetros podem ser divididos em
 subgrupos que atingem diferentes partes do ciclo de execução. Suas definições gerais de funcionamento
-e reprodução podem ser exemplificadas na \autoref{fig_CA}.
+e reprodução podem ser exemplificadas no \autoref{quadro_p0}.
 
-\begin{table}[htb]
-	\centering
-    \caption{\label{tabela_p0}Parametrizações gerais e de reprodução.}
-    \begin{tabular}{cccc}
+\begin{quadro}[htb]
+	%%\centering
+    \caption{\label{quadro_p0}Parametrizações gerais e de reprodução.}
+    \begin{tabular}{|c|c|}
         \hline
 		\textbf{Parâmetro} & \textbf{Valor} \\ \hline
 		Tamanho da população & 300      \\ \hline
@@ -123,7 +123,7 @@ e reprodução podem ser exemplificadas na \autoref{fig_CA}.
         Limiar de sobrevivência & 0,3     \\ \hline
     \end{tabular}
     \fonte{Autoria pr{\'o}pria.}
-\end{table}
+\end{quadro}
 
 Primeiramente, o tamanho da população corresponde à quantidade de carros concorrentes a cada geração.
 O limite mínimo de aptidão influencia, em eventual obtenção de tal valor de aptidão por qualquer membro da
@@ -134,13 +134,13 @@ seguir como cópias à geração seguinte, enquanto o limite de sobrevivência �
 porcentagem de membros de uma geração encerrada que devem se incumbir da tarefa de se reproduzir e gerar a próxima geração.
 
 Em relação às definições específicas aos genomas e suas interações passíveis a alterações de topologia,
-é possível observar as configurações iniciais na \autoref{tabela_p1}, a maneira da qual cada parâmetro afeta
+é possível observar as configurações iniciais no \autoref{quadro_p1}, a maneira da qual cada parâmetro afeta
 o desempenho do algoritmo será abordada detalhadamente em capítulos posteriores.
 
-\begin{table}[htb]
-	\centering
-    \caption{\label{tabela_p1}Parametrizações de genomas e redes neurais.}
-    \begin{tabular}{cccc}
+\begin{quadro}[htb]
+	%%\centering
+	\caption{\label{quadro_p1}Parametrizações de genomas e redes neurais.}
+    \begin{tabular}{|c|c|}
         \hline
 		\textbf{Parâmetro} & \textbf{Valor} \\ \hline
 		Função de ativação & tanh      \\ \hline
@@ -157,7 +157,7 @@ o desempenho do algoritmo será abordada detalhadamente em capítulos posteriore
 		Conexão inicial & Completa     \\ \hline
     \end{tabular}
     \fonte{Autoria pr{\'o}pria.}
-\end{table}
+\end{quadro}
 
 A função de ativação de cada nó da rede pode ser definida tal qual a sua probabilidade de sofrer uma mutação
 — decorrendo-se na etapa adequada de reprodução. A compatibilidade de nós define quão similares dois nós
@@ -177,7 +177,7 @@ pode ser representada pela \autoref{fig_CC}.
 \begin{figure}[htb]
         \centering
         \caption{\label{fig_CC}Organização inicial da rede neural partindo de uma estrutura mínima.}
-        \includegraphics[width=0.3\textwidth]{images/CC.png}
+        \includegraphics[width=0.5\textwidth]{images/CC.png}
         \legend{
                 Fonte: Autoria Pr{\'o}pria.
         }
@@ -422,7 +422,7 @@ O trecho de código com a implementação do cálculo de saída pode ser observa
 \begin{figure}[htb]
         \centering
         \caption{\label{fig_HM}Implementação do método de ativação da rede neural baseando-se nos valores lidos, retornando o valor de ativação de cada nó de saída.}
-        \includegraphics[width=0.9\textwidth]{images/HM.png}
+        \includegraphics[width=0.7\textwidth]{images/HM.png}
         \legend{
                 Fonte: Autoria Pr{\'o}pria.
         }
@@ -470,21 +470,12 @@ posição do frame anterior. A \autoref{fig_IA} representa sua implementação a
         }
 \end{figure}
 
-Também é possível recompensar o carro com a obtenção de marcos dispostos pelo circuito (círculos amarelos na \autoref{fig_IB}). 
+Também é possível recompensar o carro com a obtenção de marcos dispostos pelo circuito (círculos amarelos na \autoref{fig_simul}). 
 
 Sua implementação visa acelerar o treinamento dos indivíduos a moverem-se de forma ordenada com o
 formato da pista, mas sem obrigá-los, considerando que o valor posteriormente atrelado à aptidão não
 provém exclusivamente desta fonte e a sua não obtenção — ao realizar uma travessia por caminhos levemente
 alternativos — pode vir a ser uma característica interessante para a etapa seguinte de reprodução.
-
-\begin{figure}[htb]
-        \centering
-        \caption{\label{fig_IB}Marcos dispostos pelo circuito a fim de recompensar o movimento ordenado do carro.}
-        \includegraphics[width=0.7\textwidth]{images/IB.png}
-        \legend{
-                Fonte: Autoria Pr{\'o}pria.
-        }
-\end{figure}
 
 A atribuição do valor percorrido à aptidão do genoma presente no carro acontece apenas em sua exclusão do ambiente
 — proveniente da colisão com os limites do percurso — efetivando o ciclo de um carro e permitindo que o desempenho atrelado a
@@ -515,7 +506,7 @@ Antes do processo de \textit{crossing-over} ser executado, o parâmetro de inici
 \begin{figure}[htb]
         \centering
         \caption{\label{fig_KA}Aplicação de elitismo sobre cada espécie, preservando os melhores indivíduos de cada espécie à nova geração.}
-        \includegraphics[width=0.7\textwidth]{images/KA.png}
+        \includegraphics[width=0.6\textwidth]{images/KA.png}
         \legend{
                 Fonte: Autoria Pr{\'o}pria.
         }
@@ -543,7 +534,7 @@ como apresenta a \autoref{fig_KC}.
 \begin{figure}[htb]
         \centering
         \caption{\label{fig_KC}Chamada do processo de reprodução entre pais aleatórios selecionados e mutação dos filhos resultantes.}
-        \includegraphics[width=0.7\textwidth]{images/KC.png}
+        \includegraphics[width=0.9\textwidth]{images/KC.png}
         \legend{
                 Fonte: Autoria Pr{\'o}pria.
         }
