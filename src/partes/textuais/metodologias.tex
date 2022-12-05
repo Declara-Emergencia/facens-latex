@@ -110,14 +110,20 @@ Desta forma, ao algoritmo proposto à simulação desenvolvida, os parâmetros p
 subgrupos que atingem diferentes partes do ciclo de execução. Suas definições gerais de funcionamento
 e reprodução podem ser exemplificadas na \autoref{fig_CA}.
 
-\begin{figure}[htb]
-        \centering
-        \caption{\label{fig_CA}Parametrizações gerais e de reprodução.}
-        \includegraphics[width=0.7\textwidth]{images/CA.png}
-        \legend{
-                Fonte: Autoria Pr{\'o}pria.
-        }
-\end{figure}
+\begin{table}[htb]
+	\centering
+    \caption{\label{tabela_p0}Parametrizações gerais e de reprodução.}
+    \begin{tabular}{cccc}
+        \hline
+		\textbf{Parâmetro} & \textbf{Valor} \\ \hline
+		Tamanho da população & 300      \\ \hline
+		Limiar de aptidão & 20000     \\ \hline
+		Reiniciar na extinção & Sim     \\ \hline
+		Elitismo & 10     \\ \hline
+        Limiar de sobrevivência & 0,3     \\ \hline
+    \end{tabular}
+    \fonte{Autoria pr{\'o}pria.}
+\end{table}
 
 Primeiramente, o tamanho da população corresponde à quantidade de carros concorrentes a cada geração.
 O limite mínimo de aptidão influencia, em eventual obtenção de tal valor de aptidão por qualquer membro da
@@ -128,17 +134,30 @@ seguir como cópias à geração seguinte, enquanto o limite de sobrevivência �
 porcentagem de membros de uma geração encerrada que devem se incumbir da tarefa de se reproduzir e gerar a próxima geração.
 
 Em relação às definições específicas aos genomas e suas interações passíveis a alterações de topologia,
-é possível observar as configurações iniciais na \autoref{fig_CB}, a maneira da qual cada parâmetro afeta
+é possível observar as configurações iniciais na \autoref{tabela_p1}, a maneira da qual cada parâmetro afeta
 o desempenho do algoritmo será abordada detalhadamente em capítulos posteriores.
 
-\begin{figure}[htb]
-        \centering
-        \caption{\label{fig_CB}Parametrizações de genomas e redes neurais.}
-        \includegraphics[width=0.7\textwidth]{images/CB.png}
-        \legend{
-                Fonte: Autoria Pr{\'o}pria.
-        }
-\end{figure}
+\begin{table}[htb]
+	\centering
+    \caption{\label{tabela_p1}Parametrizações de genomas e redes neurais.}
+    \begin{tabular}{cccc}
+        \hline
+		\textbf{Parâmetro} & \textbf{Valor} \\ \hline
+		Função de ativação & tanh      \\ \hline
+		Taxa de mutação da função de ativação & 0,01     \\ \hline
+		Coeficiente de compatibilidade de disjunção de genoma & 1,0     \\ \hline
+		Coeficiente de compatibilidade de peso de genoma & 0,5     \\ \hline
+        Probabilidade de adicionar conexões & 0,5     \\ \hline
+		Probabilidade de remover conexões & 0,5     \\ \hline
+        Probabilidade de adicionar nós & 0,5     \\ \hline
+		Probabilidade de remover nós & 0,3     \\ \hline
+		Nós ocultos & 0     \\ \hline
+		Nós de entrada & 5     \\ \hline
+		Nós de saída & 3     \\ \hline
+		Conexão inicial & Completa     \\ \hline
+    \end{tabular}
+    \fonte{Autoria pr{\'o}pria.}
+\end{table}
 
 A função de ativação de cada nó da rede pode ser definida tal qual a sua probabilidade de sofrer uma mutação
 — decorrendo-se na etapa adequada de reprodução. A compatibilidade de nós define quão similares dois nós
